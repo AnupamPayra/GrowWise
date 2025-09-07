@@ -1,0 +1,33 @@
+career_guidance_backend/
+│
+├── app.py                  # Main application entry point
+├── config.py               # Configuration (Database URI, Secret Key, etc.)
+├── requirements.txt        # List of dependencies
+├── database.db             # SQLite database (auto-generated)
+├── models.py               # Database models (Students, Colleges, etc.)
+│
+├── routes/                  # API route logic
+│   ├── __init__.py         # Makes it a Python package
+│   ├── auth.py             # Signup & Login related endpoints
+│   ├── profile.py          # Profile management endpoints
+│   ├── recommendation.py   # Career recommendation logic
+│   ├── colleges.py         # Colleges info endpoints
+│   ├── scholarships.py     # Scholarship info endpoints
+│   └── notifications.py    # Notifications logic
+│
+├── services/                # (Optional) Business logic layer
+│   └── career_service.py   # Recommendation engine logic, etc.
+│
+├── utils/                   # (Optional) Helper functions
+│   └── helpers.py          # e.g., for sending emails or processing input
+│
+├── static/                  # Static files (optional)
+│   └── images/             # Example folder for images
+│
+├── templates/                # HTML templates (optional if not using frontend)
+│   └── index.html
+│
+└── README.md                # Project overview and instructions
+
+
+“EduGuidely”, “LearnBridge”, or “GrowWise”

@@ -1,0 +1,1 @@
+# Colleges info endpoints
