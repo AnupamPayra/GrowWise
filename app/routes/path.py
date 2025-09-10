@@ -13,6 +13,14 @@ def career():
     if request.method == "POST":
         return render_template("2main_career_awerness.html")
     return render_template("2main_career_awerness.html")
+
+
+#its for job portal file
+@path_bp.route('/job_portal', methods=["GET", "POST"])#its for job portal file
+def job_portal():
+    if request.method == "POST":
+        return render_template("job_portal.html")
+    return render_template("job_portal.html")
     
 #its for technology file
 @path_bp.route('/Technology')#its for technology file
@@ -46,3 +54,4 @@ def education():
 @path_bp.route('/science__research')#its for creative file
 def science__research():
     return render_template("science_&_research.html")
+
