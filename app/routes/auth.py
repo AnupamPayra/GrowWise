@@ -1,1 +1,0 @@
-# Signup & Login related endpoints

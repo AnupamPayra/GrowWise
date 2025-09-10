@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}EDUlearn{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/base.css' ) }}">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">📚 Academic Plain</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#subjects">Subjects</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#exams">Exams</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    {% block content %} {% endblock %}
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Academic Plain. Empowering students for academic excellence.</p>
+            <p>📧 contact@academicplain.com | 📞 +91-12345-67890</p>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='JavaScript/base.js') }}"></script>
+</body>
+
+</html>

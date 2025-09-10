@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+        
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        
+        .gradient-modern {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+        }
+        
+        .gradient-card {
+            background: linear-gradient(145deg, #1e293b 0%, #334155 100%);
+            border: 1px solid orange;
+        }
+        
+        .card-modern {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .card-modern:hover {
+            transform: translateY(-12px) rotateX(5deg);
+            box-shadow: 0 32px 64px rgba(0, 0, 0, 0.15);
+        }
+        .fade-up {
+            opacity: 0;
+            transform: translateY(60px);
+            animation: fadeUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .slide-in {
+            opacity: 0;
+            transform: translateX(-60px);
+            animation: slideIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+        .btn-modern {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-modern:hover::before {
+            left: 100%;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 4px;
+        }
+        
+        /* Floating elements */
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Modern progress bars */
+        .progress-modern {
+            background: linear-gradient(90deg, #22c55e, #10b981, #06d6a0);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        /* Dark mode styles */
+        .dark {
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+        
+        .dark .gradient-card {
+            background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+        
+        .dark .glass {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Modern typography */
+        .text-gradient {
+            background: linear-gradient(135deg, #22c55e, #10b981, #06d6a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Particle background */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: particle-float 20s infinite linear;
+        }
+        
+        @keyframes particle-float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 transition-all duration-500">
+    <!-- Modern Navigation -->
+    <nav class="fixed w-full top-0 z-50 glass backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">E</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-black text-white">EduLearn</h1>
+                        <p class="text-xs text-slate-400 -mt-1">Journey to Mastery</p>
+                    </div>
+                </div>
+                <div class="hidden lg:flex items-center space-x-4">
+                    <button id="dark-toggle" class="p-3 rounded-xl hover:bg-slate-800 transition-all duration-300 hover:scale-110">
+                        <span class="text-xl">🌙</span> 
+                    </button>
+                    <!-- Login Button -->
+                    <button class="btn-modern bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                        Login
+                    </button>
+                </div>
+                
+            
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ultra Modern Hero Section -->
+    <section class="gradient-modern min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Animated particles -->
+        <div class="particles">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-20">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="text-center lg:text-left">
+                    <div class="fade-up">
+                        <h1 class="text-5xl lg:text-7xl font-black text-white mb-8 leading-tight">
+                            Start
+                            <span class="block text-gradient bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent">
+                                Learning
+                            </span>
+                            Bright Feature
+                        </h1>
+                    </div>
+                    
+                    <div class="fade-up delay-200">
+                        <p class="text-xl lg:text-2xl text-white/90 mb-6 font-medium">
+                            Step-by-step guidance to achieve your educational and career goals
+                        </p>
+                        <p class="text-lg text-white/70 mb-12 max-w-2xl">
+                            From school subjects to career skills, EduLearn guides you with personalized pathways to achieve your Goal and structured learning.
+                        </p>
+                    </div>
+
+                </div>
+                
+                <div class="fade-up delay-600 hidden lg:block">
+                    <div class="relative">
+                        <!-- Modern 3D illustration -->
+                        <div class="glass rounded-3xl p-8 floating">
+                            <svg viewBox="0 0 400 300" class="w-full h-auto">
+                                <!-- Modern roadmap visualization -->
+                                <defs>
+                                    <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#667eea"/>
+                                        <stop offset="50%" style="stop-color:#764ba2"/>
+                                        <stop offset="100%" style="stop-color:#f093fb"/>
+                                    </linearGradient>
+                                </defs>
+                                
+                                <!-- Animated path -->
+                                <path d="M50 250 Q100 200 150 220 T250 180 T350 150" 
+                                        stroke="url(#pathGradient)" 
+                                        stroke-width="6" 
+                                        fill="none" 
+                                        stroke-linecap="round"
+                                        stroke-dasharray="400"
+                                        stroke-dashoffset="400">
+                                    <animate attributeName="stroke-dashoffset" 
+                                            values="400;0" 
+                                            dur="3s" 
+                                            repeatCount="indefinite"/>
+                                </path>
+                                
+                                <!-- Modern checkpoint nodes -->
+                                <circle cx="50" cy="250" r="12" fill="#4ADE80" class="drop-shadow-lg">
+                                    <animate attributeName="r" values="12;16;12" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="150" cy="220" r="12" fill="#60A5FA" class="drop-shadow-lg">
+                                    <animate attributeName="r" values="12;16;12" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="250" cy="180" r="12" fill="#A78BFA" class="drop-shadow-lg">
+                                    <animate attributeName="r" values="12;16;12" dur="2s" begin="1s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="350" cy="150" r="12" fill="#F59E0B" class="drop-shadow-lg">
+                                    <animate attributeName="r" values="12;16;12" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+                                </circle>
+                                <text x="50" y="300" text-anchor="middle" fill="white" font-size="14" font-weight="600">Start</text>
+                                <text x="150" y="270" text-anchor="middle" fill="white" font-size="14" font-weight="600">Learn</text>
+                                <text x="250" y="230" text-anchor="middle" fill="white" font-size="14" font-weight="600">Build</text>
+                                <text x="350" y="200" text-anchor="middle" fill="white" font-size="14" font-weight="600">Master</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmaps" class="py-12 px-6 lg:px-8 bg-slate-800 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 fade-up">
+                <h2 class="text-3xl lg:text-4xl font-black text-white mb-4">
+                    Popular Learning
+                    <span class="text-gradient">Paths</span>
+                </h2>
+                <p class="text-md text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                    Explore expertly designed educational journeys crafted by industry experts and updated regularly to keep your learning relevant and impactful.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Academic Planing Card -->
+                <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-100">
+                    
+                    <h3 class="text-xl font-black text-white mb-2">Academic Planing</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">Plan your study schedule, track progress, and build strong academic foundations.</p>
+                    <button class="w-full h-10 btn-modern bg-gradient-to-r from-green-500 to-emerald-600 text-white mt-4 py-3 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                        Start Learning
+                    </button>
+                </div>
+                <!-- Career Awareness Card -->
+                <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-200">
+                    
+                    <h3 class="text-xl font-black text-white mb-2">Career Awareness</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">Explore different career options, discover your strengths, and align your learning with future opportunities.</p>
+                    <button class="w-full btn-modern bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 mt-4 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                        Start Learning
+                    </button>
+                </div>
+
+                <!-- Industry Connection Card -->
+                <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-300">
+                    
+                    <h3 class="text-xl font-black text-white mb-2">Industry Connection</h3>
+                    <p class="text-white text-sm leading-relaxed">Build real-world knowledge by connecting academics with industry insights, internships, and projects</p>
+                    <button class="w-full btn-modern bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 mt-4 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                        Start Learning
+                    </button>
+                </div>
+
+                <!-- Govt. College Directory Card -->
+                <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-400">
+                    
+                    <h3 class="text-xl font-black text-white mb-2">College Directory</h3>
+                    <p class="text-white text-sm leading-relaxed">Get access to college information, admissions, and scholarship details.</p>
+                    <button class="w-full btn-modern bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-3 mt-4 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                        Start Learning
+                    </button>
+                </div>
+
+                <!-- Exam details -->
+                <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-500">
+                    
+                    <h3 class="text-xl font-black text-white mb-2">Exam Details</h3>
+                    <p class="text-white text-sm leading-relaxed">Eligibility, Types , Preparation(Right to start ) in one place.</p>
+                    <button class="w-full btn-modern bg-gradient-to-r from-red-600 to-pink-600 text-white py-3 mt-4 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                        Start Learning
+                    </button>
+                </div>
+
+                <!-- AI Dashboard Card -->
+                <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-600">
+                    <h3 class="text-xl font-black text-white mb-2">AI Dashboard</h3>
+                    <p class="text-white text-sm leading-relaxed">Use AI-powered insights to personalize your education journey, monitor progress, and set career goals.</p>
+                    <button class="w-full btn-modern bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 mt-4 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                        Start Learning
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Search Section -->
+    <section class="py-24 px-6 lg:px-8 bg-slate-900">
+        <div class="max-w-5xl mx-auto text-center fade-up">
+            <h2 class="text-4xl lg:text-5xl font-black text-white mb-8">
+                Find Your Perfect
+                <span class="text-gradient">Path</span>
+            </h2>
+            
+            <div class="glass rounded-3xl p-12 shadow-2xl">
+                <div class="mb-8">
+                    <div class="relative max-w-2xl mx-auto">
+                        <input type="text" placeholder="Search roadmaps, skills, or technologies..." 
+                               class="w-full px-8 py-6 pl-16 text-lg border-0 rounded-2xl bg-white shadow-lg focus:ring-4 focus:ring-blue-500/20 focus:outline-none transition-all duration-300">
+                        <div class="absolute left-6 top-6 text-gray-400 text-2xl">🔍</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <select class="px-6 py-4 border-0 rounded-2xl bg-white shadow-lg focus:ring-4 focus:ring-blue-500/20 focus:outline-none font-medium">
+                        <option>All Categories</option>
+                        <option>Tech</option>
+                        <option>Design</option>
+                        <option>Business</option>
+                        <option>Language</option>
+                        <option>AI</option>
+                    </select>
+                    <select class="px-6 py-4 border-0 rounded-2xl bg-white shadow-lg focus:ring-4 focus:ring-blue-500/20 focus:outline-none font-medium">
+                        <option>All Levels</option>
+                        <option>Beginner</option>
+                        <option>Intermediate</option>
+                        <option> Advanced</option>
+                    </select>
+                    <select class="px-6 py-4 border-0 rounded-2xl bg-white shadow-lg focus:ring-4 focus:ring-blue-500/20 focus:outline-none font-medium">
+                        <option>All Formats</option>
+                        <option>Roadmap</option>
+                        <option>Course</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Footer -->
+    <footer class="bg-gray-900 text-white py-20 px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-5 gap-12 mb-16">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                            <span class="text-white font-black text-2xl">E</span>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-black">EduLearn</h3>
+                            <p class="text-gray-400 text-lg">Journey to Mastery</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-8 text-lg leading-relaxed max-w-md">
+                        Helping students everywhere with guided learning journeys designed to simplify complex topics, build confidence, and support lifelong learning.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-black mb-6 text-xl">Course</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Academic Planing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Career Awarenees</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Industry connection</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Collage Directory</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">AI DashBoard</a></li>
+                    </ul>
+                </div>
+                
+    
+                
+                <div>
+                    <h4 class="font-black mb-6 text-xl"> About</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-12 text-center">
+                <p class="text-gray-400 text-lg">
+                    &copy; 2025 LearnMap. All rights reserved. Made with ❤ for learners worldwide.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Dark mode functionality
+        const darkToggle = document.getElementById('dark-toggle');
+        const body = document.body;
+        
+        darkToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            const isDark = body.classList.contains('dark');
+            darkToggle.innerHTML = isDark ? '<span class="text-xl">☀</span>' : '<span class="text-xl">🌙</span>';
+        });
+
+        // Add scroll-based animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-up, .slide-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

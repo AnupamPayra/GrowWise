@@ -1,1 +1,0 @@
-# Scholarship info endpoints
