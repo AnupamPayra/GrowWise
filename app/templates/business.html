@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -127,4 +127,142 @@
  <script>"../js/business.js"</script> 
     
 </body>
-</html>
+</html> -->
+
+
+
+
+
+
+
+
+{% extends 'base.html' %}
+{% block title %}Business{% endblock %}
+{% block extra_css %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/business.css') }}">
+{% endblock %}
+
+
+
+
+{% block content %} 
+<section id="home" class="hero">
+        <div class="container">
+            <h1>Your Future in Business & Finance Starts Here</h1>
+            <p>Discover exciting career opportunities in the dynamic world of business and finance</p>
+           
+        </div>
+    </section>
+
+    <main>
+        <section id="careers" class="section">
+            <div class="container">
+                <h2 class="section-title">Business & Finance Career Paths</h2>
+                <div class="careers-grid">
+                    <div class="career-card" onclick="showCareerDetails('investment-banker')">
+                        <span class="career-icon"></span>
+                        <h3>Investment Banker</h3>
+                        <p>Advise on mergers, acquisitions, IPOs, and help companies raise capital.</p>
+                        <div class="salary-range">Avg Salary: ₹10–18 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Financial Modeling</span>
+                                <span class="skill-tag">Valuation</span>
+                                <span class="skill-tag">Excel</span>
+                                <span class="skill-tag">Negotiation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('financial-analyst')">
+                        <span class="career-icon"></span>
+                        <h3>Financial Analyst</h3>
+                        <p>Analyze financial data, prepare reports, forecast budgets, and support decision-making.</p>
+                        <div class="salary-range">Avg Salary: ₹5–8 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Data Analysis</span>
+                                <span class="skill-tag">Excel</span>
+                                <span class="skill-tag">Finance Concepts</span>
+                                <span class="skill-tag">Presentation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('bank-manager')">
+                        <span class="career-icon"></span>
+                        <h3>Bank Manager</h3>
+                        <p>Oversee daily bank operations, customer relations, and business development.</p>
+                        <div class="salary-range">Avg Salary: ₹7–12 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Banking Knowledge</span>
+                                <span class="skill-tag">Leadership</span>
+                                <span class="skill-tag">Risk Management</span>
+                                <span class="skill-tag">Sales</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('business-consultant')">
+                        <span class="career-icon"></span>
+                        <h3>Business Consultant</h3>
+                        <p>Help companies improve efficiency, strategy, and profitability through advisory.</p>
+                        <div class="salary-range">Avg Salary: ₹8–15 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Problem-Solving</span>
+                                <span class="skill-tag">Data Analysis</span>
+                                <span class="skill-tag">Business Strategy</span>
+                                <span class="skill-tag">Communication</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('economist')">
+                        <span class="career-icon"></span>
+                        <h3>Economist / Policy Analyst</h3>
+                        <p>Study economic trends, develop financial/policy recommendations, advise government or corporates.</p>
+                        <div class="salary-range">Avg Salary: ₹6–10 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Research</span>
+                                <span class="skill-tag">Statistics</span>
+                                <span class="skill-tag">Data Analysis</span>
+                                <span class="skill-tag">Economics Knowledge</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('chartered-accountant')">
+                        <span class="career-icon"></span>
+                        <h3>Chartered Accountant</h3>
+                        <p>Handle audits, taxation, financial reporting, and compliance for companies.</p>
+                        <div class="salary-range">Avg Salary: ₹8–12 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Accounting</span>
+                                <span class="skill-tag">Taxation</span>
+                                <span class="skill-tag">Auditing</span>
+                                <span class="skill-tag">Financial Laws</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JavaScript/business.js') }}"></script>
+{% endblock %}

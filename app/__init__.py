@@ -12,10 +12,13 @@ def cretae_app():
 
     db.init_app(app) #it responsible for creating the data base
     
-    # from app.routes.auth import auth_bp
-    # from app.routes.task import task_bp
-    # app.register_blueprint(auth_bp)
-    # app.register_blueprint(task_bp)
+    from app.routes.auth import auth_bp
+    app.register_blueprint(auth_bp)
+
+    from app.routes.path import path_bp
+    app.register_blueprint(path_bp)
+    # # from app.routes.task import task_bp
+    # # app.register_blueprint(task_bp)
 
 
     return app

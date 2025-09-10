@@ -9,9 +9,5 @@ with app.app_context():
     db.create_all()
 
 
-@app.route('/')
-def main():
-    return render_template("mainPage.html")
-
 if __name__ == "__main__":
     app.run(debug=True)

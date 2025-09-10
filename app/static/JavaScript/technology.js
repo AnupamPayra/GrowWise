@@ -26,7 +26,7 @@
             }
         });
 
-        // Career card details
+        // // Career card details
         function showCareerDetails(career) {
             const careerInfo = {
                 'software-developer': {

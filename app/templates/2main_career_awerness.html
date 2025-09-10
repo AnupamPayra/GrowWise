@@ -1,0 +1,156 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Awareness - Explore Your Future</title>
+    <link rel="stylesheet" href="../css/main_career_awerness.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Career Awareness</h1>
+            <p>Explore different career options, discover your strengths, and align your learning with future opportunities</p>
+           
+
+        <div class="main-content">
+            <section id="explore" class="section">
+                <h2>Explore Career Fields</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">Discover exciting career opportunities across different industries and find what sparks your interest.</p>
+                
+                <div class="cards-grid">
+                    <div class="card" onclick="exploreField('technology')">
+                        <span class="card-icon">💻</span>
+                        <h3>Technology</h3>
+                        <p>Software development, AI, cybersecurity, data science, and emerging tech innovations.</p>
+                    </div>
+                    <div class="card" onclick="exploreField('healthcare')">
+                        <span class="card-icon">🏥</span>
+                        <h3>Healthcare</h3>
+                        <p>Medicine, nursing, therapy, medical research, and healthcare administration.</p>
+                    </div>
+                    <div class="card" onclick="exploreField('business')">
+                        <span class="card-icon">📈</span>
+                        <h3>Business & Finance</h3>
+                        <p>Marketing, consulting, entrepreneurship, finance, and business management.</p>
+                    </div>
+                    <div class="card" onclick="exploreField('creative')">
+                        <span class="card-icon">🎨</span>
+                        <h3>Creative Arts</h3>
+                        <p>Design, media, entertainment, writing, and creative content production.</p>
+                    </div>
+                    <div class="card" onclick="exploreField('education')">
+                        <span class="card-icon">📚</span>
+                        <h3>Education</h3>
+                        <p>Teaching, training, curriculum development, and educational leadership.</p>
+                    </div>
+                    <div class="card" onclick="exploreField('science')">
+                        <span class="card-icon">🔬</span>
+                        <h3>Science & Research</h3>
+                        <p>Research, engineering, environmental science, and laboratory work.</p>
+                    </div>
+                </div>
+
+                <div id="field-details" class="career-pathways" style="display: none; margin-top: 40px;">
+                    <h3 id="field-title" style="grid-column: 1/-1; text-align: center; margin-bottom: 20px;"></h3>
+                </div>
+            </section>
+          
+        </div>
+    </div>
+
+    <script>"../js/main_career_awerness.js"</script>
+</body>
+</html> -->
+
+
+
+
+
+{% extends 'base.html' %}
+{% block title %}EDUlearn-Career{% endblock %}
+{% block extra_css %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/2main_career_awerness.css') }}">
+{% endblock %}
+
+
+
+
+{% block content %} 
+<div class="container">
+        <div class="hero">
+            <h1>Career Awareness</h1>
+            <p>Explore different career options, discover your strengths, and align your learning with future opportunities</p>
+           
+
+        <div class="main-content">
+            <section id="explore" class="section">
+                <h2>Explore Career Fields</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">Discover exciting career opportunities across different industries and find what sparks your interest.</p>
+                
+                <div class="cards-grid">
+                    <a href="{{ url_for('path.Technology' ) }}" target="_blank">
+                        <div class="card" onclick="exploreField('technology')" >
+                        <span class="card-icon">💻</span>
+                        <h3>Technology</h3>
+                        <p>Software development, AI, cybersecurity, data science, and emerging tech innovations.</p>
+                    </div>
+                    </a>
+                    <a href="{{ url_for('path.helthcare' ) }}" target="_blank">
+                        <div class="card" onclick="exploreField('healthcare')">
+                            <span class="card-icon">🏥</span>
+                            <h3>Healthcare</h3>
+                            <p>Medicine, nursing, therapy, medical research, and healthcare administration.</p>
+                        </div>
+                    </a>
+
+                    <a href="{{ url_for('path.business' ) }}" target="_blank">
+                        <div class="card" onclick="exploreField('business')">
+                            <span class="card-icon">📈</span>
+                            <h3>Business & Finance</h3>
+                            <p>Marketing, consulting, entrepreneurship, finance, and business management.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="{{ url_for('path.creative' ) }}" target="_blank">
+                        <div class="card" onclick="exploreField('creative')">
+                        <span class="card-icon">🎨</span>
+                        <h3>Creative Arts</h3>
+                        <p>Design, media, entertainment, writing, and creative content production.</p>
+                    </div>
+                    </a>
+
+                    <a href="{{ url_for('path.education' ) }}" target="_blank">
+                        <div class="card" onclick="exploreField('education')">
+                        <span class="card-icon">📚</span>
+                        <h3>Education</h3>
+                        <p>Teaching, training, curriculum development, and educational leadership.</p>
+                    </div>
+                    </a>
+                    
+                    <a href="{{ url_for('path.science__research' ) }} " target="_blank">
+                        <div class="card" onclick="exploreField('science')">
+                        <span class="card-icon">🔬</span>
+                        <h3>Science & Research</h3>
+                        <p>Research, engineering, environmental science, and laboratory work.</p>
+                    </div>
+                    </a>
+                    
+                </div>
+
+                <div id="field-details" class="career-pathways" style="display: none; margin-top: 40px;">
+                    <h3 id="field-title" style="grid-column: 1/-1; text-align: center; margin-bottom: 20px;"></h3>
+                </div>
+            </section>
+          
+        </div>
+    </div>
+{% endblock %}
+
+
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JavaScript/2main_career_awerness.js') }}"></script>
+{% endblock %}

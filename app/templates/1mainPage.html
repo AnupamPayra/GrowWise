@@ -8,13 +8,14 @@ EDlearn
 
 {% block extra_css %}
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="{{ url_for('static', filename='CSS/home.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/1mainPage.css') }}">
 {% endblock %}
 
 
 
 </head>
 {% block content %}
+
 <body class="bg-slate-900 transition-all duration-500">
     <!-- Modern Navigation -->
 
@@ -139,21 +140,24 @@ EDlearn
                     </button>
                 </div>
                 <!-- Career Awareness Card -->
-                <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-200">
+                <form action="/career" method="POST">
+                    <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-200">
 
-                    <h3 class="text-xl font-black text-white mb-2">Career Awareness</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">Explore different career options, discover your
-                        strengths, and align your learning with future opportunities.</p>
-                    <button
-                        class="w-full btn-modern bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 mt-4 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                        Start Learning
-                    </button>
-                </div>
+                        <h3 class="text-xl font-black text-white mb-2">Career Awareness</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">Explore different career options, discover
+                            your
+                            strengths, and align your learning with future opportunities.</p>
+                        <button action="/career" type="submit"
+                            class="w-full btn-modern bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 mt-4 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                            Start Learning
+                        </button>
+                    </div>
+                </form>
 
                 <!-- Industry Connection Card -->
                 <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-300">
 
-                    <h3 class="text-xl font-black text-white mb-2">Industry Connection</h3>
+                    <h3 class="text-xl font-black text-white mb-2">Job Portal</h3>
                     <p class="text-white text-sm leading-relaxed">Build real-world knowledge by connecting academics
                         with industry insights, internships, and projects</p>
                     <button
@@ -250,5 +254,5 @@ EDlearn
 
 
     {% block extra_js %}
-    <script src="{{ url_for('static', filename='JavaScript/home.js') }}"></script>
+    <script src="{{ url_for('static', filename='JavaScript/1mainPage.js') }}"></script>
     {% endblock %}
