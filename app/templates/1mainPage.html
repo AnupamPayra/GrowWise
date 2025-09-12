@@ -129,16 +129,18 @@ EDlearn
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Academic Planing Card -->
+                 <form action="/academic" method="POST">
                 <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-100">
 
                     <h3 class="text-xl font-black text-white mb-2">Academic Planing</h3>
                     <p class="text-slate-300 text-sm leading-relaxed">Plan your study schedule, track progress, and
                         build strong academic foundations.</p>
-                    <button
+                    <button action="/academic" type="submit"
                         class="w-full h-10 btn-modern bg-gradient-to-r from-green-500 to-emerald-600 text-white mt-4 py-3 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                         Start Learning
                     </button>
                 </div>
+                </form>
                 <!-- Career Awareness Card -->
                 <form action="/career" method="POST">
                     <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-200">
@@ -212,8 +214,8 @@ EDlearn
     <section class="py-24 px-6 lg:px-8 bg-slate-900">
         <div class="max-w-5xl mx-auto text-center fade-up">
             <h2 class="text-4xl lg:text-5xl font-black text-white mb-8">
-                Find Your Perfect
-                <span class="text-gradient">Path</span>
+                Find Your Dream
+                <span class="text-gradient">collages</span>
             </h2>
 
             <div class="glass rounded-3xl p-12 shadow-2xl">

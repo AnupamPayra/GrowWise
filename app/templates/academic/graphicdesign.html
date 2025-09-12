@@ -1,0 +1,151 @@
+
+
+
+
+
+{% extends 'base.html' %}
+{% block title %}Graphicdesign{% endblock %}
+{% block extra_css %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/academic/graphicdesign.css') }}">
+{% endblock %}
+
+
+
+
+{% block content %} 
+<body>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Graphic Design Career Section</h1>
+      <p>
+        Discover exciting opportunities in Graphic Design fields – from 
+        creative multimedia to modern UI/UX. Your journey to a rewarding 
+        creative career starts here!
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <section class="careers-grid">
+
+        <!-- Diploma in Graphic Design -->
+        <div class="career-card engineering" data-career="Diploma in Graphic Design">
+          <h3 class="career-title">Diploma in Graphic Design</h3>
+          <p class="career-description">
+            Kickstart your creative career with core graphic design skills! Perfect for beginners.
+          </p>
+          <div class="career-details">
+            <div class="detail-item"><span>Activities: Logo design, posters, print & digital media</span></div>
+            <div class="detail-item"><span>Job Opportunities: Graphic Designer, Layout Artist</span></div>
+            <div class="detail-item"><span>Salary Range (Avg.): ₹2 – ₹4.5 LPA</span></div>
+          </div>
+          <div class="career-stats">
+            <div class="stat-box"><div class="stat-value">1 year</div><div class="stat-name">Degree Duration</div></div>
+            <div class="stat-box"><div class="stat-value">High</div><div class="stat-name">Job Demand</div></div>
+          </div>
+        </div>
+
+        <!-- B.Des in Graphic Design -->
+        <div class="career-card medical" data-career="B.Des in Graphic Design">
+          <h3 class="career-title">B.Des in Graphic Design</h3>
+          <p class="career-description">
+            Build a strong foundation with advanced design knowledge and creative industry exposure.
+          </p>
+          <div class="career-details">
+            <div class="detail-item"><span>Activities: Branding, typography, motion graphics</span></div>
+            <div class="detail-item"><span>Job Opportunities: Creative Director, Visual Designer</span></div>
+            <div class="detail-item"><span>Salary Range (Avg.): ₹4 – ₹8 LPA</span></div>
+          </div>
+          <div class="career-stats">
+            <div class="stat-box"><div class="stat-value">4 years</div><div class="stat-name">Degree Duration</div></div>
+            <div class="stat-box"><div class="stat-value">Very High</div><div class="stat-name">Job Demand</div></div>
+          </div>
+        </div>
+
+        <!-- Diploma in Multimedia & Animation -->
+        <div class="career-card pharmacy" data-career="Diploma in Multimedia & Animation">
+          <h3 class="career-title">Diploma in Multimedia & Animation</h3>
+          <p class="career-description">
+            Blend creativity with technology! Learn animation, motion graphics, and 3D design.
+          </p>
+          <div class="career-details">
+            <div class="detail-item"><span>Activities: Animation, VFX, 3D modeling</span></div>
+            <div class="detail-item"><span>Job Opportunities: Animator, Motion Graphics Designer</span></div>
+            <div class="detail-item"><span>Salary Range (Avg.): ₹3 – ₹6 LPA</span></div>
+          </div>
+          <div class="career-stats">
+            <div class="stat-box"><div class="stat-value">1–2 years</div><div class="stat-name">Degree Duration</div></div>
+            <div class="stat-box"><div class="stat-value">High</div><div class="stat-name">Job Demand</div></div>
+          </div>
+        </div>
+
+        <!-- UI/UX Design -->
+        <div class="career-card research" data-career="UI/UX Design Certification">
+          <h3 class="career-title">UI/UX Design Certification</h3>
+          <p class="career-description">
+            Specialize in user interface & user experience design for apps & websites.
+          </p>
+          <div class="career-details">
+            <div class="detail-item"><span>Activities: Wireframing, prototyping, mobile app design</span></div>
+            <div class="detail-item"><span>Job Opportunities: UI Designer, UX Researcher</span></div>
+            <div class="detail-item"><span>Salary Range (Avg.): ₹5 – ₹12 LPA</span></div>
+          </div>
+          <div class="career-stats">
+            <div class="stat-box"><div class="stat-value">1 year</div><div class="stat-name">Degree Duration</div></div>
+            <div class="stat-box"><div class="stat-value">Very High</div><div class="stat-name">Job Demand</div></div>
+          </div>
+        </div>
+
+        <!-- Visual Communication -->
+        <div class="career-card it" data-career="Advanced Diploma in Visual Communication">
+          <h3 class="career-title">Advanced Diploma in Visual Communication</h3>
+          <p class="career-description">
+            Develop a strong design language for modern visual storytelling.
+          </p>
+          <div class="career-details">
+            <div class="detail-item"><span>Activities: Branding, packaging design, infographics</span></div>
+            <div class="detail-item"><span>Job Opportunities: Visual Designer, Art Director</span></div>
+            <div class="detail-item"><span>Salary Range (Avg.): ₹3.5 – ₹7 LPA</span></div>
+          </div>
+          <div class="career-stats">
+            <div class="stat-box"><div class="stat-value">1–2 years</div><div class="stat-name">Degree Duration</div></div>
+            <div class="stat-box"><div class="stat-value">High</div><div class="stat-name">Job Prospects</div></div>
+          </div>
+        </div>
+
+        <!-- Web & Graphic Design -->
+        <div class="career-card datascience" data-career="Certificate in Web & Graphic Design">
+          <h3 class="career-title">Certificate in Web & Graphic Design</h3>
+          <p class="career-description">
+            Learn to combine graphic design with web design for digital platforms.
+          </p>
+          <div class="career-details">
+            <div class="detail-item"><span>Activities: Web banners, website graphics</span></div>
+            <div class="detail-item"><span>Job Opportunities: Web Designer, Digital Graphic Designer</span></div>
+            <div class="detail-item"><span>Salary Range (Avg.): ₹2.5 – ₹5 LPA</span></div>
+          </div>
+          <div class="career-stats">
+            <div class="stat-box"><div class="stat-value">6 months</div><div class="stat-name">Degree Duration</div></div>
+            <div class="stat-box"><div class="stat-value">High</div><div class="stat-name">Job Demand</div></div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+
+</body>
+{% endblock %}
+
+
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JavaScript/academic/graphicdesign.js') }}"></script>
+{% endblock %}
+

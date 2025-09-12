@@ -1,0 +1,213 @@
+
+
+
+
+
+
+{% extends 'base.html' %}
+{% block title %}Government Jobs{% endblock %}
+{% block extra_css %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/academic/govtjob.css') }}">
+{% endblock %}
+
+
+
+
+{% block content %} 
+<body>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Govt Jobs Career Paths</h1>
+      <p>
+        Discover exciting opportunities in Engineering fields - from cutting-edge
+        research to life-saving medical practices. Your journey to a rewarding
+        science career starts here!
+      </p>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+      <section class="careers-grid">
+        <!-- Example Career Card -->
+        <div class="career-card engineering" data-career="engineering">
+          <h3 class="career-title">Police Constable</h3>
+          <p class="career-description">
+            Serve the nation by maintaining law and order. Perfect for those who
+            are physically fit and disciplined.
+          </p>
+
+          <div class="career-details">
+            <div class="detail-item">
+              <span>Activities: Patrolling, crime control, public safety</span>
+            </div>
+            <div class="detail-item">
+              <span>Job Opportunities: Constable → Head Constable → SI</span>
+            </div>
+            <div class="detail-item">
+              <span>Salary Range (Avg.): ₹3 – ₹5 LPA</span>
+            </div>
+          </div>
+
+          <div class="career-stats">
+            <div class="stat-box">
+              <div class="stat-value">4 years</div>
+              <div class="stat-name">Preparation Duration</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">Very High</div>
+              <div class="stat-name">Job Demand</div>
+            </div>
+          </div>
+        </div>
+        <div class="career-card medical" data-career="medical">
+                    <h3 class="career-title">Indian Army</h3>
+                    <p class="career-description">
+                        Join the defense forces and serve the country with pride and courage.
+                    
+                    <div class="career-details">
+                        <div class="detail-item">
+                            <span>Activities: Ground duty, operations, administrative tasks, technical support</span>
+                        </div>
+                        <div class="detail-item">
+                            
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon"></span>
+                            <span>Salary Range (Avg.): ₹4 – ₹6 LPA</span>
+                        </div>
+                    </div>
+
+                    <div class="career-stats">
+                        <div class="stat-box">
+                            <div class="stat-value">1 years</div>
+                            <div class="stat-name">preparation Duration</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value"> Very High </div>
+                            <div class="stat-name">job Demand</div>
+                        </div>
+                    </div>
+
+         
+                </div>
+
+                <!-- Pharmacy Card -->
+                <div class="career-card pharmacy" data-career="pharmacy">
+                   
+                    <h3 class="career-title">Indian Air Force (Group X & Y)</h3>
+                    <p class="career-description">
+                        A prestigious career with discipline and technology-driven roles in the Air Force.
+                    <div class="career-details">
+                        <div class="detail-item">
+                      
+                            <span>Activities: Advanced pharma study, deeper specialization, industry-ready skills</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Job Opportunities: Same as B.Pharm with faster progression</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Salary Range (Avg.): ₹3.5 – ₹7 LPA</span>
+                        </div>
+                    </div>
+
+                    <div class="career-stats">
+                        <div class="stat-box">
+                            <div class="stat-value">3 years</div>
+                            <div class="stat-name">preparation Duration</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">High</div>
+                            <div class="stat-name">job Demand</div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+                <!-- Research Card -->
+                <div class="career-card research" data-career="research">
+                  
+                    <h3 class="career-title">Railway Jobs (RRB Group D & Clerk)</h3>
+                    <p class="career-description">
+                        Stable career with Indian Railways in various non-technical posts.
+                    </p>
+                    
+                    <div class="career-details">
+                        <div class="detail-item">
+                            <span>Activities:Ticket checking, clerical work, field operations, customer support</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Job Opportunities:Railway Clerk, Ticket Collector (TC), Group D Posts
+                            </span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Salary Range (Avg.): ₹3 – ₹5 LPA</span>
+                        </div>
+                    </div>
+
+                    <div class="career-stats">
+                        <div class="stat-box">
+                            <div class="stat-value">12 months</div>
+                            <div class="stat-name">preparation Duration</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">Very High</div>
+                            <div class="stat-name">Job Demand</div>
+                        </div>
+                    </div>
+
+                  
+                </div>
+
+                
+                <div class="career-card it" data-career="it">
+                  
+                    <h3 class="career-title">Postal Department (India Post – MTS, GDS, Postman)</h3>
+                    <p class="career-description">
+                       Start your career in the Indian Postal Department with a secure government job.
+                    
+                    <div class="career-details">
+                        <div class="detail-item">
+                        
+                            <span>Activities: Mail delivery, counter work, office assistance</span>
+                        </div>
+                            <span class="detail-icon"></span>
+                            <span>Job Opportunities: Gramin Dak Sevak (GDS), Postman, MTS</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Salary Range (Avg.): ₹2.5 – ₹5 LPA</span>
+
+                     <div class="career-stats">
+                        </div>
+                    </div>
+
+                    <div class="career-stats">
+                        <div class="stat-box">
+                            <div class="stat-value">8 months</div>
+                            <div class="stat-name">preparation Duration</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">High </div>
+                            <div class="stat-name">Job Prospects</div>
+                        </div>
+                    </div>                    
+                </div>
+
+        <!-- Add other cards (Army, Air Force, Railway, Postal, etc.) here -->
+      </section>
+    </div>
+  </main>
+
+
+</body>
+{% endblock %}
+
+
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JavaScript/academic/govtjob.js') }}"></script>
+{% endblock %}
+
