@@ -1,222 +1,53 @@
-
-
 {% extends 'base.html' %}
-{% block title %}Higher study{% endblock %}
+
+{% block title %}Medical Field{% endblock %}
+
 {% block extra_css %}
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="{{ url_for('static', filename='CSS/academic/higherstudy.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/academic/medical.css') }}">
 {% endblock %}
 
+{% block content %}
 
+<div class="container">
+    <div class="hero">
+        <h1>After Class 12th Engineer career option</h1>
+    </div>
 
-
-{% block content %} 
-<section class="hero">
-        <div class="container">
-            <h1>Honours Career Section</h1>
-            <p>An Honours degree (like B.A. Hons, B.Sc. Hons, B.Com. Hons, etc.) can open many specialized career paths compared to a general degree, since it usually involves deeper subject knowledge, research, and sometimes a thesis/project. The exact
-                path depends on your field of study. Your journey to a rewarding honours career starts here!</p>
-        </div>
-    </section>
-
-    <main class="main-content">
-        <div class="container">
-            <section class="careers-grid">
-                <!-- English Honours Card -->
-                <div class="career-card engineering" data-career="engineering">
-                    <h3 class="career-title">English Honours</h3>
-                    <p class="career-description">
-                        B.A.EnglishHonours is a 3-year undergraduate degree, focuses onEnglish literature, language,criticism, andwriting. It goes deeper than general English courses — not just grammar or communication, but also poetry, drama, novels, literary theory, linguistics,
-                        and cultural studies.
-                    </p>
-
-                    <div class="career-details">
-                        <div class="detail-item">
-                            <span>Multiple specializations: M.A in English literature, Content Writing, B.Ed.(Bachelor of Education).</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Work in: Education & Research, Creative & Cultural fields, Goverment & Competitive Exams.</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Required: 10+2(any stream, but usually with English as a subject).</span>
-                        </div>
-                    </div>
-
-                    <div class="career-stats">
-                        <div class="stat-box">
-                            <div class="stat-value">3 years</div>
-                            <div class="stat-name">Duration</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-value">Medium</div>
-                            <div class="stat-name">Job Demand</div>
-                        </div>
-                    </div>
+    <!-- Technology Section -->
+    <div class="career-section">
+        <div class="career-content">
+            <div class="career-image tech-bg">
+                <div class="career-icon">
+                    <h1>After Twelfth</h1>
                 </div>
+            </div>
 
-                <!-- Bangla Honours Card -->
-                <div class="career-card medical" data-career="medical">
-                    <h3 class="career-title">Bangla Honours</h3>
-                    <p class="career-description">
-                        B.A.Bangla Honours is a3-year undergraduate degree. The course covers classical and modern Bengali literature, linguistics, criticism, cultural history, and comparative studies.
-                    </p>
-
-                    <div class="career-details">
-                        <div class="detail-item">
-                            <span>Specializations: B.Ed.(Bachelor of Education), M.Ed./Educational Technology, M.A.in Bengali Literature. </span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Work in: School Teacher, College/University Lecturer, Librarian. </span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Required: Teaching, Research, Goverment services, Writing.</span>
-                        </div>
-                    </div>
-
-                    <div class="career-stats">
-                        <div class="stat-box">
-                            <div class="stat-value">3 years</div>
-                            <div class="stat-name">Duration</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-value">Medium</div>
-                            <div class="stat-name">Job demand</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- History Honours Card -->
-                <div class="career-card pharmacy" data-career="pharmacy">
-                    <h3 class="career-title">History Honours</h3>
-                    <p class="career-description">
-                        History Honours is a 3-year undergraduate degree that focuses on the past—political, social, economic, and cultural developments of India and the world.
-                    </p>
-
-                    <div class="career-details">
-                        <div class="detail-item">
-                            <span>Specialization: Journalism & Mass Communication, Creative Writing / Scriptwriting, Political / Diplomatic History, Archaeology. </span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Work in: Education & Research, Media & Publishing, Corporate & NGOs, Government & Civil Services. </span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Required: Teaching , Civil Services, Museums, Archaeology.</span>
-                        </div>
-                    </div>
-
-                    <div class="career-stats">
-                        <div class="stat-box">
-                            <div class="stat-value">3 years</div>
-                            <div class="stat-name">Duration</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-value">Medium</div>
-                            <div class="stat-name">Job Demand</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Physics Honours Card -->
-                <div class="career-card research" data-career="research">
-                    <h3 class="career-title">Physics Honours</h3>
-                    <p class="career-description">
-                        Physics Honours is a 3-year undergraduate degree, focused on fundamental and applied physics. It covers theoretical concepts, experiments, and problem-solving in areas like mechanics, optics, thermodynamics, electromagnetism, quantum physics, and modern
-                        physics.
-                    </p>
-
-                    <div class="career-details">
-                        <div class="detail-item">
-                            <span>Specializations: Astrophysics / Space Science, Quantum Physics, Data Science & Machine Learning, Scientific Journalism & Technical Writing.</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Work in: Teacher, Researcher / Scintist, Scintific Journalist, Data Scientist.</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Required: Higher Education & Research, Government Jobs & Scientific Organizations, Specialized Technical Careers.</span>
-                        </div>
-                    </div>
-
-                    <div class="career-stats">
-                        <div class="stat-box">
-                            <div class="stat-value">3 years</div>
-                            <div class="stat-name">Duration</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-value">High</div>
-                            <div class="stat-name">Job Demand</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mathematics Honours Card -->
-                <div class="career-card it" data-career="IT">
-                    <h3 class="career-title">Mathematics Honours</h3>
-                    <p class="career-description">
-                        Mathematics Honours is a 3-year undergraduate degree, focused on pure and applied mathematics. Students develop analytical thinking, problem-solving, logical reasoning, and quantitative skills.
-                    </p>
-
-                    <div class="career-details">
-                        <div class="detail-item">
-                            <span>Specializations: Teaching, Technical content, Cryptography & Cybersecurity, Pure Mathematics. </span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Work in: Teacher, Professor or Lectural, Data Analyst, Scintific Officer, Data Scintist.</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Required: Higher Education & Research, Government & Civil Services, Corporate & Technology Sector. </span>
-                        </div>
-                    </div>
-
-                    <div class="career-stats">
-                        <div class="stat-box">
-                            <div class="stat-value">3 years</div>
-                            <div class="stat-name">Degree Duration</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-value">High</div>
-                            <div class="stat-name">Job demand</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chemistry Honours Card -->
-                <div class="career-card datascience" data-career="datascience">
-                    <h3 class="career-title">Chemistry Honours</h3>
-                    <p class="career-description">
-                        Chemistry Honours is a 3-year undergraduate degree, focused on fundamental and applied chemistry. Students study physical, organic, inorganic, and analytical chemistry, along with practical laboratory skills.
-                    </p>
-
-                    <div class="career-details">
-                        <div class="detail-item">
-                            <span>Specialization: Organic Chemistry, Physical Chemistry, Biochemistry, REsearch & Development, laboratory & Analytical Services.</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Work in: Teacher , Lecturer or Professor, Biotech & Fertilizer companies,Scientist.</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Required: Higher Education & Research, Scientist / Technical Officer, Industry & Corporate Sector. </span>
-                        </div>
-                    </div>
-
-                    <div class="career-stats">
-                        <div class="stat-box">
-                            <div class="stat-value">3 years</div>
-                            <div class="stat-name">Duration</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-value">High</div>
-                            <div class="stat-name">Job demand</div>
-                        </div>
-                    </div>
+            {% for key, course in higherstudy.items() %}
+            <section>
+                <h2>{{ course.heading }}</h2>
+                <p><span class="highlight">About:</span><br>
+                    {{ course.about }}
+                </p>
+                <p><span class="highlight">Description:</span><br>
+                    {{ course.description }}
+                </p>
+                <p><span class="highlight">Job Opportunities:</span> {{ course.opportunities }}</p>
+                <p><span class="highlight">Salary Range (Avg.):</span> {{ course.salary }}</p>
+                <div class="btn-group">
+                    <button class="explore-btn">{{ course.duration }}<br>Degree Duration</button>
+                    <button class="explore-btn">{{ course.demand }}<br>Job Demand</button>
                 </div>
             </section>
+            {% endfor %}
+
         </div>
-    </main>
+    </div>
+
+</div>
+
 {% endblock %}
-
-
 
 {% block extra_js %}
-<script src="{{ url_for('static', filename='JavaScript/academic/higherstudy.js') }}"></script>
+<script src="{{ url_for('static', filename='JavaScript/academic/medical.js') }}"></script>
 {% endblock %}
-

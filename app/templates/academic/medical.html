@@ -1,63 +1,53 @@
-
 {% extends 'base.html' %}
-{% block title %}Medical- Field{% endblock %}
+
+{% block title %}Medical Field{% endblock %}
+
 {% block extra_css %}
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='CSS/academic/medical.css') }}">
 {% endblock %}
 
+{% block content %}
 
-
-
-{% block content %} 
-<body class="bg-slate-900 transition-all duration-500">
-
-  <!-- Hero Section -->
-  <section class="gradient-modern py-32 px-6 lg:px-8 text-center relative">
-    <div class="max-w-4xl mx-auto fade-up">
-      <h1 class="text-4xl lg:text-6xl font-black text-white mb-4">
-        Your <span class="text-gradient">Exam Guide</span> Starts Here
-      </h1>
-      <p class="text-xl text-white/80 mb-8">
-        Find detailed information on eligibility, exam patterns, and preparation tips for top competitive and entrance exams in India.
-      </p>
+<div class="container">
+    <div class="hero">
+        <h1>After Class 12th Engineer career option</h1>
     </div>
-  </section>
 
-  <!-- Main Content -->
-  <main class="py-12 px-6 lg:px-8 bg-slate-800">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10">
+    <!-- Technology Section -->
+    <div class="career-section">
+        <div class="career-content">
+            <div class="career-image tech-bg">
+                <div class="career-icon">
+                    <h1>After Twelfth</h1>
+                </div>
+            </div>
 
-      <!-- Example Card -->
-      <div class="gradient-card rounded-2xl p-8 shadow-xl fade-up">
-        <div class="flex items-center mb-4">
-          <h2 class="text-3xl font-black text-white">JEE Main</h2>
-          <a href="https://jeemain.nta.ac.in/" target="_blank" class="ml-4 text-blue-400 hover:text-blue-300 transition-colors">Official Website</a>
+            {% for key, course in medical.items() %}
+            <section>
+                <h2>{{ course.heading }}</h2>
+                <p><span class="highlight">About:</span><br>
+                    {{ course.about }}
+                </p>
+                <p><span class="highlight">Description:</span><br>
+                    {{ course.description }}
+                </p>
+                <p><span class="highlight">Job Opportunities:</span> {{ course.opportunities }}</p>
+                <p><span class="highlight">Salary Range (Avg.):</span> {{ course.salary }}</p>
+                <div class="btn-group">
+                    <button class="explore-btn">{{ course.duration }}<br>Degree Duration</button>
+                    <button class="explore-btn">{{ course.demand }}<br>Job Demand</button>
+                </div>
+            </section>
+            {% endfor %}
+
         </div>
-        <h3 class="text-xl font-bold text-white mt-6 mb-2">Eligibility</h3>
-        <ul class="list-disc list-inside text-slate-300 space-y-1">
-          <li>Should have passed Class 12th or equivalent examination.</li>
-          <li>No age limit for candidates.</li>
-          <li>Max 3 consecutive years allowed.</li>
-        </ul>
-        <h3 class="text-xl font-bold text-white mt-6 mb-2">Exam Pattern</h3>
-        <p class="text-slate-300">Two papers: Paper 1 (B.E./B.Tech), Paper 2 (B.Arch/B.Planning).</p>
-        <h3 class="text-xl font-bold text-white mt-6 mb-2">Preparation</h3>
-        <p class="text-slate-300">Focus on Physics, Chemistry, Maths. Practice mocks regularly.</p>
-      </div>
-
-      <!-- Repeat other cards here... -->
-
     </div>
-  </main>
 
-</body>
+</div>
 
 {% endblock %}
-
-
 
 {% block extra_js %}
 <script src="{{ url_for('static', filename='JavaScript/academic/medical.js') }}"></script>
 {% endblock %}
-

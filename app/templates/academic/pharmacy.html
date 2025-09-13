@@ -1,151 +1,53 @@
-
-
 {% extends 'base.html' %}
-{% block title %}Pharmacy{% endblock %}
+
+{% block title %}Medical Field{% endblock %}
+
 {% block extra_css %}
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="{{ url_for('static', filename='CSS/academic/pharmacy.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/academic/medical.css') }}">
 {% endblock %}
 
+{% block content %}
 
+<div class="container">
+    <div class="hero">
+        <h1>After Class 12th Engineer career option</h1>
+    </div>
 
-
-{% block content %} 
-<body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Pharmacy Career Paths</h1>
-            <p>Discover exciting opportunities in Pharmacy fields - from drug formulation to clinical practice. Your journey to a rewarding science career starts here!</p>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <section class="careers-grid">
-
-                <!-- B.Pharm Card -->
-                <div class="career-card engineering" data-career="engineering">
-                    
-                    <h3 class="career-title">B.Pharm (Bachelor of Pharmacy)</h3>
-                    <p class="career-description">
-                        Build your career in the pharmaceutical world! B.Pharm gives you knowledge of drug formulation, clinical research, and medicine manufacturing.
-                    </p>
-
-                    <div class="career-details">
-                        <div class="detail-item"><span class="detail-icon"></span>Activities: Drug formulation, pharma research, clinical trials</div>
-                        <div class="detail-item"><span class="detail-icon"></span>Job Opportunities: Pharmacist, Drug Inspector, Pharma Sales Officer, Research Assistant</div>
-                        <div class="detail-item"><span class="detail-icon"></span>Salary Range (Avg.): ₹3.5 – ₹7 LPA</div>
-                    </div>
-
-                    <div class="career-stats">
-                        <div class="stat-box"><div class="stat-value">4 years</div><div class="stat-name">Degree Duration</div></div>
-                        <div class="stat-box"><div class="stat-value">Very High</div><div class="stat-name">Job Demand</div></div>
-                    </div>
+    <!-- Technology Section -->
+    <div class="career-section">
+        <div class="career-content">
+            <div class="career-image tech-bg">
+                <div class="career-icon">
+                    <h1>After Twelfth</h1>
                 </div>
+            </div>
 
-                <!-- Pharm.D Card -->
-                <div class="career-card medical" data-career="medical">
-                    
-                    <h3 class="career-title">Pharm.D (Doctor of Pharmacy)</h3>
-                    <p class="career-description">Take the doctor-level path in Pharmacy! Pharm.D focuses on clinical pharmacy, hospital practice, and patient care with global career opportunities.</p>
-
-                    <div class="career-details">
-                        <div class="detail-item"><span class="detail-icon"></span>Activities: Clinical pharmacy, hospital practice, patient counseling</div>
-                        <div class="detail-item"><span class="detail-icon"></span>Job Opportunities: Clinical Pharmacist, Healthcare Consultant, Researcher</div>
-                        <div class="detail-item"><span class="detail-icon"></span>Salary Range (Avg.): ₹6 – ₹15 LPA</div>
-                    </div>
-
-                    <div class="career-stats">
-                        <div class="stat-box"><div class="stat-value">6 years</div><div class="stat-name">Degree Duration</div></div>
-                        <div class="stat-box"><div class="stat-value">High</div><div class="stat-name">Job Demand</div></div>
-                    </div>
+            {% for key, course in pharmacy.items() %}
+            <section>
+                <h2>{{ course.heading }}</h2>
+                <p><span class="highlight">About:</span><br>
+                    {{ course.about }}
+                </p>
+                <p><span class="highlight">Description:</span><br>
+                    {{ course.description }}
+                </p>
+                <p><span class="highlight">Job Opportunities:</span> {{ course.opportunities }}</p>
+                <p><span class="highlight">Salary Range (Avg.):</span> {{ course.salary }}</p>
+                <div class="btn-group">
+                    <button class="explore-btn">{{ course.duration }}<br>Degree Duration</button>
+                    <button class="explore-btn">{{ course.demand }}<br>Job Demand</button>
                 </div>
-
-                <!-- B.Pharm Lateral Entry -->
-                <div class="career-card pharmacy" data-career="pharmacy">
-                    
-                    <h3 class="career-title">B.Pharm (Lateral Entry)</h3>
-                    <p class="career-description">Continue your journey after Diploma! Lateral Entry lets you enter directly into 2nd year B.Pharm for faster career growth.</p>
-
-                    <div class="career-details">
-                        <div class="detail-item"><span class="detail-icon"></span>Activities: Advanced pharma study, deeper specialization, industry-ready skills</div>
-                        <div class="detail-item"><span class="detail-icon"></span>Job Opportunities: Same as B.Pharm with faster progression</div>
-                        <div class="detail-item"><span class="detail-icon"></span>Salary Range (Avg.): ₹3.5 – ₹7 LPA</div>
-                    </div>
-
-                    <div class="career-stats">
-                        <div class="stat-box"><div class="stat-value">3 years</div><div class="stat-name">Degree Duration</div></div>
-                        <div class="stat-box"><div class="stat-value">High</div><div class="stat-name">Job Demand</div></div>
-                    </div>
-                </div>
-
-                <!-- D.Pharm Card -->
-                <div class="career-card research" data-career="research">
-                   
-                    <h3 class="career-title">D.Pharm (Diploma in Pharmacy)</h3>
-                    <p class="career-description">Start your pharmacy career quickly! D.Pharm prepares you for medicine dispensing, hospital support, and pharmacy business.</p>
-
-                    <div class="career-details">
-                        <div class="detail-item"><span class="detail-icon"></span>Activities: Dispensing medicines, basic pharmacy practice, hospital support</div>
-                        <div class="detail-item"><span class="detail-icon"></span>Job Opportunities: Pharmacist, Hospital Assistant, Medical Store Manager</div>
-                        <div class="detail-item"><span class="detail-icon"></span>Salary Range (Avg.): ₹2.5 – ₹5 LPA</div>
-                    </div>
-
-                    <div class="career-stats">
-                        <div class="stat-box"><div class="stat-value">2 years</div><div class="stat-name">Degree Duration</div></div>
-                        <div class="stat-box"><div class="stat-value">High</div><div class="stat-name">Job Demand</div></div>
-                    </div>
-                </div>
-
-                <!-- Diploma in Pharmaceutical Marketing -->
-                <div class="career-card it" data-career="it">
-                    
-                    <h3 class="career-title">Diploma in Pharmaceutical Marketing</h3>
-                    <p class="career-description">Step into the business side of pharmacy! This course trains you in pharma product sales, promotion, and market strategy.</p>
-
-                    <div class="career-details">
-                        <div class="detail-item"><span class="detail-icon"></span>Activities: Pharma product sales, marketing strategies, business growth</div>
-                        <div class="detail-item"><span class="detail-icon"></span>Job Opportunities: Pharma Sales Executive, Marketing Manager, Business Consultant</div>
-                        <div class="detail-item"><span class="detail-icon"></span>Salary Range (Avg.): ₹2.5 – ₹6 LPA</div>
-                    </div>
-
-                    <div class="career-stats">
-                        <div class="stat-box"><div class="stat-value">1-2 years</div><div class="stat-name">Degree Duration</div></div>
-                        <div class="stat-box"><div class="stat-value">Medium</div><div class="stat-name">Job Prospects</div></div>
-                    </div>
-                </div>
-
-                <!-- Diploma in Pharmaceutical Management -->
-                <div class="career-card datascience" data-career="datascience">
-                   
-                    <h3 class="career-title">Diploma in Pharmaceutical Management</h3>
-                    <p class="career-description">Lead the pharma industry with management skills! This course covers supply chain, production planning, and company operations.</p>
-
-                    <div class="career-details">
-                        <div class="detail-item"><span class="detail-icon"></span>Activities: Pharma industry management, supply chain, production planning</div>
-                        <div class="detail-item"><span class="detail-icon"></span>Job Opportunities: Production Manager, Pharma Project Manager, Supply Chain</div>
-                        <div class="detail-item"><span class="detail-icon"></span>Salary Range (Avg.): ₹3 – ₹6 LPA</div>
-                    </div>
-
-                    <div class="career-stats">
-                        <div class="stat-box"><div class="stat-value">1-2 years</div><div class="stat-name">Degree Duration</div></div>
-                        <div class="stat-box"><div class="stat-value">High</div><div class="stat-name">Job Demand</div></div>
-                    </div>
-                </div>
-
             </section>
-        </div>
-    </main>
+            {% endfor %}
 
-</body>
+        </div>
+    </div>
+
+</div>
 
 {% endblock %}
-
-
 
 {% block extra_js %}
-<script src="{{ url_for('static', filename='JavaScript/academic/pharmacy.js') }}"></script>
+<script src="{{ url_for('static', filename='JavaScript/academic/medical.js') }}"></script>
 {% endblock %}
-

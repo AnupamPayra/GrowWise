@@ -1,5 +1,18 @@
 from flask import Blueprint, redirect, render_template, url_for, flash, request, session
+from app.ecademic.engineering import engineering_courses
+from app.ecademic.govtjob import govt_job_courses
+from app.ecademic.graphic_design import graphic_design_courses
+from app.ecademic.higherstudy import higher_study_courses
+from app.ecademic.pharmacy import pharmacy_courses
+from app.ecademic.medical import medicalCourses
 
+
+from app.class10.arts import class_10
+from app.class10.commerce import class_10
+from app.class10.diploma import class_10
+from app.class10.profesional import class_10
+from app.class10.science import class_10
+from app.class10.vocational import class_10
 path_bp = Blueprint('path', __name__)
 
 
@@ -58,9 +71,6 @@ def job_portal():
         return render_template("job_portal.html")
     return render_template("job_portal.html")
 
-
-
-
 #its for Exam_Details file
 @path_bp.route('/Exam_Details', methods=["GET", "POST"])#its for Exam_Details file
 def Exam_Details():
@@ -89,39 +99,84 @@ def twelfth():
     if request.method == "POST":
         return render_template('academic/Class12th.html')
     return render_template('academic/Class12th.html')
-#####################3
+
+
+
+# ==============================================After 12th ecademic======================================================
 @path_bp.route('/engineering', methods=["GET", "POST"])
 def engineering():
     if request.method == "POST":
-        return render_template('academic/engineering.html')
+        return render_template('academic/engineering.html', engineering=engineering_courses)
     return render_template('academic/engineering.html')
 
 @path_bp.route('/govtjob', methods=["GET", "POST"])
 def govtjob():
     if request.method == "POST":
-        return render_template('academic/govtjob.html')
+        return render_template('academic/govtjob.html', govtjob=govt_job_courses)
     return render_template('academic/govtjob.html')
 
 @path_bp.route('/graphicdesign', methods=["GET", "POST"])
 def graphicdesign():
     if request.method == "POST":
-        return render_template('academic/graphicdesign.html')
+        return render_template('academic/graphicdesign.html', graphicdesign=graphic_design_courses)
     return render_template('academic/graphicdesign.html')
 
 @path_bp.route('/higherstudy', methods=["GET", "POST"])
 def higherstudy():
     if request.method == "POST":
-        return render_template('academic/higherstudy.html')
+        return render_template('academic/higherstudy.html', higherstudy=higher_study_courses)
     return render_template('academic/higherstudy.html')
 
 @path_bp.route('/medical', methods=["GET", "POST"])
 def medical():
     if request.method == "POST":
-        return render_template('academic/medical.html')
+        return render_template('academic/medical.html', medical=medicalCourses)
     return render_template('academic/medical.html')
 
 @path_bp.route('/pharmacy', methods=["GET", "POST"])
 def pharmacy():
     if request.method == "POST":
-        return render_template('academic/pharmacy.html')
+        return render_template('academic/pharmacy.html', pharmacy=pharmacy_courses)
+    return render_template('academic/pharmacy+.html')
+
+
+
+
+
+
+# ==============================================After 10th ecademic======================================================
+@path_bp.route('/science', methods=["GET", "POST"])
+def science():
+    if request.method == "POST":
+        return render_template('academic/engineering.html', engineering=class_10)
+    return render_template('academic/engineering.html')
+
+@path_bp.route('/commerce', methods=["GET", "POST"])
+def commerce():
+    if request.method == "POST":
+        return render_template('academic/govtjob.html', govtjob=class_10)
+    return render_template('academic/govtjob.html')
+
+@path_bp.route('/arts', methods=["GET", "POST"])
+def arts():
+    if request.method == "POST":
+        return render_template('academic/graphicdesign.html', graphicdesign=class_10)
+    return render_template('academic/graphicdesign.html')
+
+@path_bp.route('/vocational', methods=["GET", "POST"])
+def vocational():
+    if request.method == "POST":
+        return render_template('academic/higherstudy.html', higherstudy=class_10)
+    return render_template('academic/higherstudy.html')
+
+@path_bp.route('/diploma', methods=["GET", "POST"])
+def diploma():
+    if request.method == "POST":
+        return render_template('academic/medical.html', medical=class_10)
+    return render_template('academic/medical.html')
+
+@path_bp.route('/professional', methods=["GET", "POST"])
+def professional():
+    if request.method == "POST":
+        return render_template('academic/pharmacy.html', pharmacy=class_10)
     return render_template('academic/pharmacy+.html')

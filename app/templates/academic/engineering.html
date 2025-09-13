@@ -1,237 +1,53 @@
-
 {% extends 'base.html' %}
-{% block title %}Engineering{% endblock %}
+
+{% block title %}Medical Field{% endblock %}
+
 {% block extra_css %}
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="{{ url_for('static', filename='CSS/academic/engineering.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/academic/medical.css') }}">
 {% endblock %}
 
+{% block content %}
 
-
-
-{% block content %} 
-<body class="bg-slate-900 transition-all duration-500">
-
-  <!-- Hero Section -->
-  <section class="gradient-modern py-32 px-6 lg:px-8 text-center relative">
-    <div class="max-w-4xl mx-auto fade-up">
-      <h1 class="text-4xl lg:text-6xl font-black text-white mb-4">
-        Explore Your
-        <span class="text-gradient">Engineering Path</span>
-      </h1>
+<div class="container">
+    <div class="hero">
+        <h1>After Class 12th Engineer career option</h1>
     </div>
-  </section>
 
-  <!-- Main Section -->
-  <main class="py-12 px-6 lg:px-8 bg-slate-800">
-    <div class="max-w-7xl mx-auto">
-      <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- Example Card -->
-        <div class="gradient-card rounded-2xl p-8 shadow-xl card-modern">
-          <h3 class="text-xl font-black text-white mb-2">
-            CSE (Computer Science & Engineering)
-          </h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Build intelligent software and shape the digital future! CSE blends coding, algorithms, AI, and system design to solve modern tech challenges.
-          </p>
-          
-          <div class="text-slate-300 text-sm leading-relaxed mt-4">
-            <div class="detail-item mb-2">
-              <span>Activities: Programming, Software Development, AI/ML, Cybersecurity</span>
+    <!-- Technology Section -->
+    <div class="career-section">
+        <div class="career-content">
+            <div class="career-image tech-bg">
+                <div class="career-icon">
+                    <h1>After Twelfth</h1>
+                </div>
             </div>
-            <div class="detail-item mb-2">
-              <span>Job Opportunities: Software Engineer, Data Scientist, Cloud Engineer, Cybersecurity Specialist</span>
-            </div>
-            <div class="detail-item mb-2">
-              <span>Salary Range (Avg.): ₹4.5 – ₹12 LPA</span>
-            </div>
-          </div>
 
-          <div class="grid grid-cols-2 gap-4 mt-6">
-            <div class="text-center p-3 rounded-lg bg-slate-700">
-              <div class="font-bold text-xl text-green-400">4 years</div>
-              <div class="text-slate-400 text-xs">Degree Duration</div>
-            </div>
-            <div class="text-center p-3 rounded-lg bg-slate-700">
-              <div class="font-bold text-xl text-green-400">Very High</div>
-              <div class="text-slate-400 text-xs">Job Demand</div>
-            </div>
-          </div>
+            {% for key, course in engineering.items() %}
+            <section>
+                <h2>{{ course.heading }}</h2>
+                <p><span class="highlight">About:</span><br>
+                    {{ course.about }}
+                </p>
+                <p><span class="highlight">Description:</span><br>
+                    {{ course.description }}
+                </p>
+                <p><span class="highlight">Job Opportunities:</span> {{ course.opportunities }}</p>
+                <p><span class="highlight">Salary Range (Avg.):</span> {{ course.salary }}</p>
+                <div class="btn-group">
+                    <button class="explore-btn">{{ course.duration }}<br>Degree Duration</button>
+                    <button class="explore-btn">{{ course.demand }}<br>Job Demand</button>
+                </div>
+            </section>
+            {% endfor %}
+
         </div>
-                        <!-- IT Card -->
-                <div class="gradient-card rounded-2xl p-8 shadow-xl card-modern">
-                    <h3 class="text-xl font-black text-white mb-2">IT (Information Technology)</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        Power the world with networks and secure digital solutions! IT focuses on managing data, systems, and technology for business efficiency.
-                    </p>
-                    
-                    <div class="text-slate-300 text-sm leading-relaxed mt-4">
-                        <div class="detail-item mb-2">
-                            <span>Activities: Networking, Database Management, Cloud Computing, Cybersecurity, IT Support</span>
-                        </div>
-                        <div class="detail-item mb-2">
-                            <span>Job Opportunities: Network Engineer, Database Admin, IT Consultant, System Analyst, Cloud Specialist</span>
-                        </div>
-                        <div class="detail-item mb-2">
-                            <span>Salary Range (Avg.): ₹3.5 – ₹10 LPA</span>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 mt-6">
-                        <div class="text-center p-3 rounded-lg bg-slate-700">
-                            <div class="font-bold text-xl text-green-400">4 years</div>
-                            <div class="text-slate-400 text-xs">Degree Duration</div>
-                        </div>
-                        <div class="text-center p-3 rounded-lg bg-slate-700">
-                            <div class="font-bold text-xl text-green-400">High</div>
-                            <div class="text-slate-400 text-xs">Job Demand</div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- ECE Card -->
-                <div class="gradient-card rounded-2xl p-8 shadow-xl card-modern">
-                    <h3 class="text-xl font-black text-white mb-2">ECE (Electronics & Communication Engineering)</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        Design the communication systems of tomorrow! ECE integrates electronics and telecom to build smart devices and networks.
-                    </p>
-                    
-                    <div class="text-slate-300 text-sm leading-relaxed mt-4">
-                        <div class="detail-item mb-2">
-                            <span>Activities: Circuit Design, Embedded Systems, IoT, Wireless Communication, Robotics</span>
-                        </div>
-                        <div class="detail-item mb-2">
-                            <span>Job Opportunities: VLSI Engineer, Embedded Engineer, Telecom Engineer, IoT Developer, Electronics Design Engineer</span>
-                        </div>
-                        <div class="detail-item mb-2">
-                            <span>Salary Range (Avg.): ₹4 – ₹11 LPA</span>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 mt-6">
-                        <div class="text-center p-3 rounded-lg bg-slate-700">
-                            <div class="font-bold text-xl text-green-400">4 years</div>
-                            <div class="text-slate-400 text-xs">Degree Duration</div>
-                        </div>
-                        <div class="text-center p-3 rounded-lg bg-slate-700">
-                            <div class="font-bold text-xl text-green-400">High</div>
-                            <div class="text-slate-400 text-xs">Job Demand</div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- EE Card -->
-                <div class="gradient-card rounded-2xl p-8 shadow-xl card-modern">
-                    <h3 class="text-xl font-black text-white mb-2">EE (Electrical Engineering)</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        Power the world with innovation! EE focuses on electricity, power systems, and automation to drive industries and cities.
-                    </p>
-                    
-                    <div class="text-slate-300 text-sm leading-relaxed mt-4">
-                        <div class="detail-item mb-2">
-                            <span>Activities: Power Systems, Renewable Energy, Control Systems, Electrical Machines, Automation</span>
-                        </div>
-                        <div class="detail-item mb-2">
-                            <span>Job Opportunities: Power Engineer, Electrical Design Engineer, Energy Consultant, Control Engineer, Automation Specialist</span>
-                        </div>
-                        <div class="detail-item mb-2">
-                            <span>Salary Range (Avg.): ₹4 – ₹9 LPA</span>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 mt-6">
-                        <div class="text-center p-3 rounded-lg bg-slate-700">
-                            <div class="font-bold text-xl text-green-400">4 years</div>
-                            <div class="text-slate-400 text-xs">Degree Duration</div>
-                        </div>
-                        <div class="text-center p-3 rounded-lg bg-slate-700">
-                            <div class="font-bold text-xl text-green-400">High</div>
-                            <div class="text-slate-400 text-xs">Job Demand</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ME Card -->
-                <div class="gradient-card rounded-2xl p-8 shadow-xl card-modern">
-                    <h3 class="text-xl font-black text-white mb-2">ME (Mechanical Engineering)</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        Shape machines and industries! ME combines physics and design to create engines, robotics, and manufacturing systems.
-                    </p>
-                    
-                    <div class="text-slate-300 text-sm leading-relaxed mt-4">
-                        <div class="detail-item mb-2">
-                            <span>Activities: CAD Design, Manufacturing, Robotics, Thermal Engineering, Automobile Engineering</span>
-                        </div>
-                        <div class="detail-item mb-2">
-                            <span>Job Opportunities: Design Engineer, Automotive Engineer, Robotics Engineer, Manufacturing Engineer, Thermal Engineer</span>
-                        </div>
-                        <div class="detail-item mb-2">
-                            <span>Salary Range (Avg.): ₹3.5 – ₹8.5 LPA</span>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 mt-6">
-                        <div class="text-center p-3 rounded-lg bg-slate-700">
-                            <div class="font-bold text-xl text-green-400">4 years</div>
-                            <div class="text-slate-400 text-xs">Degree Duration</div>
-                        </div>
-                        <div class="text-center p-3 rounded-lg bg-slate-700">
-                            <div class="font-bold text-xl text-green-400">High</div>
-                            <div class="text-slate-400 text-xs">Job Prospects</div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- CS Card -->
-                <div class="gradient-card rounded-2xl p-8 shadow-xl card-modern">
-                    <h3 class="text-xl font-black text-white mb-2">CS (Cyber Security)</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        Protect the digital world! CS focuses on defending systems, networks, and data from cyber threats.
-                    </p>
-                    
-                    <div class="text-slate-300 text-sm leading-relaxed mt-4">
-                        <div class="detail-item mb-2">
-                            <span>Activities: Ethical Hacking, Network Security, Cyber Forensics, Malware Analysis, Cloud Security</span>
-                        </div>
-                        <div class="detail-item mb-2">
-                            <span>Job Opportunities: Cybersecurity Analyst, Ethical Hacker, Security Consultant, Forensics Expert, Cloud Security Engineer</span>
-                        </div>
-                        <div class="detail-item mb-2">
-                            <span>Salary Range (Avg.): ₹5 – ₹15 LPA</span>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 mt-6">
-                        <div class="text-center p-3 rounded-lg bg-slate-700">
-                            <div class="font-bold text-xl text-green-400">4 years</div>
-                            <div class="text-slate-400 text-xs">Degree duration</div>
-                        </div>
-                        <div class="text-center p-3 rounded-lg bg-slate-700">
-                            <div class="font-bold text-xl text-green-400">Very High</div>
-                            <div class="text-slate-400 text-xs">Job Demand</div>
-                        </div>
-                    </div>
-
-                </div>
-
-        <!-- Add IT, ECE, EE, ME, CS cards here (same structure) -->
-
-      </section>
     </div>
-  </main>
 
-
-</body>
+</div>
 
 {% endblock %}
-
-
 
 {% block extra_js %}
-<script src="{{ url_for('static', filename='JavaScript/academic/engineering.js') }}"></script>
+<script src="{{ url_for('static', filename='JavaScript/academic/medical.js') }}"></script>
 {% endblock %}
-

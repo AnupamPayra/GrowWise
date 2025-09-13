@@ -1,81 +1,89 @@
-
-
-
-
-
-
-
 {% extends 'base.html' %}
-{% block title %}Class 10th{% endblock %}
+
+{% block title %}Medical Field{% endblock %}
+
 {% block extra_css %}
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="{{ url_for('static', filename='CSS/academic/10thclass.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/class12.css') }}">
 {% endblock %}
 
+{% block content %}
 
+<header>
+  <h1>Career Choices After 10th – Streams & Courses</h1>
+</header>
 
+<div class="grid-container">
 
-{% block content %} 
-<body>
-    <section class="hero">
-        <div class="container">
-            <h1>Class 10th</h1>
-            <p>Your comprehensive study companion for 10th grade success</p>
-            
-            <div class="grade-selector">
-                <form action="/academic" method="post"></form><button class="grade-btn active" data-grade="10">Back</button></form>
-                <button class="grade-btn" data-grade="12">Class 10 th</button>
-            </div>
-        </div>
-    </section>
+  <form action="/science" method="POST" target="_blank">
+    <div class="course-card">
+      <h2>Science</h2>
+      <p>
+        Focuses on subjects like Physics, Chemistry, Maths, and Biology. Opens pathways to engineering, medical, research, IT, and pure sciences. Best for analytical and problem-solving careers.
+      </p>
+      <button class="explore-btn" type="submit">Explore More</button>
+    </div>
+  </form>
 
-    <main class="main-content">
-        <div class="container">
-            <section id="subjects" class="subjects-section">
-                <h2 style="text-align: center; margin-bottom: 2rem; color: #333; font-size: 2.5rem;">Core Subjects</h2>
-                
-                <div class="subjects-grid" id="subjectsGrid">
-                    <!-- Grade 10 subjects -->
-                    <div class="subject-card grade-10">
-                        <h3>Arts</h3>
-                        <p>History, Literature, Philosophy, Sociology, and creative analytical techniques</p>
-                    </div>
-                    <div class="subject-card grade-10">
-                        <h3>Science</h3>
-                        <p>Physics, Chemistry, Biology with practical applications and experiments</p>
-                    </div>
-                    <div class="subject-card grade-10">
-                        <h3>Commerce</h3>
-                        <p>Accounting, Business Studies, Economics, Finance, and analytical business skills</p>
-                    </div>
-                    <div class="subject-card grade-10">
-                        <h3>Vocational</h3>
-                        <p>Skill Development, Practical Training, Technical Expertise, and hands-on project techniques</p>
-                    </div>
-                    <div class="subject-card grade-10">
-                        <h3>Hotel Management</h3>
-                        <p>Hospitality, Food & Beverage, Front Office, Event Management, and customer service skills</p>
-                    </div>
-                    <div class="subject-card grade-10">
-                        <h3>Graphic Design</h3>
-                        <p>Visual Communication, Typography, Illustration, UI/UX, and creative design methods</p>
-                    </div>
-                </div>
-            </section>
+  <form action="/commerce" method="POST" target="_blank">
+    <div class="course-card">
+      <h2>Commerce</h2>
+      <p>
+        Deals with business, finance, economics, and management. Leads to careers in accounting, banking, entrepreneurship, corporate law, and management studies.
+      </p>
+      <button class="explore-btn" type="submit">Explore More</button>
+    </div>
+  </form>
 
+  <form action="/arts" method="POST" target="_blank">
+    <div class="course-card">
+      <h2>Arts</h2>
+      <p>
+        Includes subjects like History, Political Science, Psychology, Sociology, Literature, Fine Arts, and Journalism. Ideal for creative, social science, media, and civil service careers.
+      </p>
+      <button class="explore-btn" type="submit">Explore More</button>
+    </div>
+  </form>
 
+  <form action="/vocational" method="POST" target="_blank">
+    <div class="course-card">
+      <h2>Vocational</h2>
+      <p>
+        Practical and skill-based courses (like Fashion Designing, Animation, Tourism, IT, Paramedical). Provides job-ready skills in specific industries.
+      </p>
+      <button class="explore-btn" type="submit">Explore More</button>
+    </div>
+  </form>
 
-        </div>
-    </main>
+  <form action="/diploma" method="POST" target="_blank">
+    <div class="course-card">
+      <h2>Higher Study</h2>
+      <p>
+        Technical programs after 10th or 12th in fields like Engineering, IT, Mechanical, Civil, and Electronics. Good for early entry into technical jobs or further studies (B.Tech, etc.).
+      </p>
+      <button class="explore-btn" type="submit">Explore More</button>
+    </div>
+  </form>
 
+  <form action="/professional" method="POST" target="_blank">
+    <div class="course-card">
+      <h2>Professional</h2>
+      <p>
+        Specialized career-focused programs like CA, CS, CMA, Law, Design, Hotel Management, and Aviation. Prepares students directly for professional roles in industry.
+      </p>
+      <button class="explore-btn" type="submit">Explore More</button>
+    </div>
+  </form>
 
-</body>
+</div>
+
 
 {% endblock %}
-
-
 
 {% block extra_js %}
-<script src="{{ url_for('static', filename='JavaScript/academic/10thclass.js') }}"></script>
+<script src="{{ url_for('static', filename='JavaScript/class12.js') }}"></script>
 {% endblock %}
+
+
+
 
