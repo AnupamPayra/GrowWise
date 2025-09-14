@@ -5,37 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}EDUlearn{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/base.css' ) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/main.css' ) }}">
     {% block extra_css %}{% endblock %}
 </head>
 
 <body>
-    <nav class="fixed w-full top-0 z-50 glass backdrop-blur-xl">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                        <span class="text-white font-bold text-xl">E</span>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl font-black text-white">EduLearn</h1>
-                        <p class="text-xs text-slate-400 -mt-1">Journey to Mastery</p>
-                    </div>
-                </div>
-                <div class="hidden lg:flex items-center space-x-4">
-                    <button id="dark-toggle" class="p-3 rounded-xl hover:bg-slate-800 transition-all duration-300 hover:scale-110">
-                        <span class="text-xl">🌙</span> 
-                    </button>
-                    <!-- Login Button -->
-                    <button class="btn-modern bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                        Login
-                    </button>
-                </div>
-                
-            
-            </div>
-        </div>
+    <header class="navbar">
+    <div class="logo">EduLearn</div>
+
+
+    <div class="right-section">
+    <nav id="nav-links" class="nav-links">
+      <a href="#">Home</a>
+      <a href="{{ url_for('path.about') }}">About Us</a>
+      <a href="#">Contact Us</a>
     </nav>
+    <div class="buttons">
+      <button class="btn-outline">Sign in</button>
+      <button class="btn-primary">Login</button>
+    </div>
+    </div>
+  </header>
 
 
     {% block content %} {% endblock %}

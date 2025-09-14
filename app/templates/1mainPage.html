@@ -8,7 +8,7 @@ EDlearn
 
 {% block extra_css %}
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="{{ url_for('static', filename='CSS/1mainPage.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/main.css') }}">
 {% endblock %}
 
 
@@ -16,249 +16,156 @@ EDlearn
 </head>
 {% block content %}
 
-<body class="bg-slate-900 transition-all duration-500">
-    <!-- Modern Navigation -->
+<body class="body">
+  <!-- Navbar -->
 
-    <!-- Ultra Modern Hero Section -->
-    <section class="gradient-modern min-h-screen flex items-center justify-center relative overflow-hidden">
-        <!-- Animated particles -->
-        <div class="particles">
-            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
-            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
-            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
-            <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
-            <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
-            <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
-            <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
-            <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
-            <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Left Side Text -->
+    <div class="hero-text">
+      <h1>This is Your Gateway to Unlimited Educational Resources</h1>
+      <p>
+        Discover a world of learning at your fingertips with our comprehensive educational platform.
+        Whether you’re a student, educator, or lifelong learner, our site offers an extensive collection of resources.
+      </p>
+      <div class="hero-buttons">
+        <form action="/10th" method="post">
+          <button class="btn-primary" type="submit">Class 10th</button>
+        </form>
+
+        <form action="/12th" method="post">
+          <button class="btn-secondary" type="submit">Class 12th</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Right Side Media -->
+    <!-- <div class="hero-media">
+      <video autoplay muted loop>
+        <source src="{{ url_for('static', filename='video/video2.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video autoplay muted loop>
+        <source src="{{ url_for('static', filename='video/video1.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div> -->
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stat-card">
+      <h2>Academic Path</h2>
+      <p>Steps to be taken for achieving your dream.</p>
+    </div>
+    <form action="/career" method="post">
+      <button type="submit">
+    <div class="stat-card">
+      <h2>Spreading Career Awareness</h2>
+      <p>Awareness is a vital part of success.</p>
+    </div>
+    </button>
+    </form>
+    <div class="stat-card">
+      <h2>AI Support</h2>
+      <p>Queries will be solved here easily.</p>
+    </div>
+  </section>
+  <section class="awareness-section">
+    <div class="awareness-text">
+      <h2>Exam Details</h2>
+      <p>
+        In India, entrance exams are broadly categorized into Engineering exams (like JEE, BITSAT, state CETs), Medical
+        exams (like NEET for MBBS, BDS, Pharmacy, Nursing), Management and Commerce exams (like CUET, IPMAT, CA
+        Foundation, CS, CMA), Arts, Humanities, and Design exams (like CUET, NID, NIFT, TISS BAT), Law exams (like CLAT,
+        AILET, LSAT), Defence exams (like NDA, Airforce, Navy entries), Diploma/Vocational exams after 10th (like
+        Polytechnic, ITI), and Scholarship/Talent exams (like NTSE, Olympiads, KVPY).
+      </p>
+      <form action="/Exam_Details" method="post"><button class="btn-primary">Explore</button></form>
+    </div>
+    <div class="awareness-image">
+      <img src="{{ url_for('static', filename='images/img.jpg') }}" alt="Career Awareness">
+    </div>
+  </section>
+
+
+  <h2 class="Cllg-dir">Job Portal</h2>
+
+  <div class="scroll-box">
+    <p>
+
+    <section class="categories" id="categories">
+      <div class="container">
+        <h2 class="section-title">Some popular job section</h2>
+        <div class="category-grid">
+          <div class="category-card" data-category="technology">
+            <div class="category-name">Technology</div>
+            <div class="category-count">5,234 jobs</div>
+            <a href="https://www.awwwards.com/websites/technology/#google_vignette" target="_blank"
+              class="go-now-btn">Go Now</a>
+          </div>
+          <div class="category-card" data-category="marketing">
+            <div class="category-name">Marketing</div>
+            <div class="category-count">2,156 jobs</div>
+            <a href="https://www.escadrille.org/en/digital-marketing-the-keys-to-boosting-your-online-visibility/?utm_term=content%20marketing&utm_campaign=News+-+Digital+Marketing&utm_source=adwords&utm_medium=ppc&hsa_acc=1976325542&hsa_cam=22365629988&hsa_grp=176325964705&hsa_ad=741355672929&hsa_src=g&hsa_tgt=kwd-71227201&hsa_kw=content%20marketing&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=22365629988&gbraid=0AAAAADRxNeMc_ZWPGf-93rNlzFFpZE07G&gclid=Cj0KCQjww4TGBhCKARIsAFLXndQVE0nGAcXkZQS6L7MFdN9_QD6Je4CAm7q2I_iPoeGxG89GaqXtrC0aAjgnEALw_wcB"
+              target="_blank" class="go-now-btn">Go Now</a>
+          </div>
+          <div class="category-card" data-category="finance">
+            <div class="category-name">Finance</div>
+            <div class="category-count">1,890 jobs</div>
+            <a href="https://www.moneycontrol.com/promo/mc_interstitial_dfp.php?size=1280x540" target="_blank"
+              class="go-now-btn">Go Now</a>
+          </div>
+          <div class="category-card" data-category="healthcare">
+            <div class="category-name">Healthcare</div>
+            <div class="category-count">3,421 jobs</div>
+            <a href="https://www.healthassure.in/" target="_blank" class="go-now-btn">Go Now</a>
+          </div>
+          <div class="category-card" data-category="education">
+            <div class="category-name">Education</div>
+            <div class="category-count">1,567 jobs</div>
+            <a href="https://www.jobsineducation.net/" target="_blank" class="go-now-btn">Go Now</a>
+          </div>
+          <div class="category-card" data-category="design">
+            <div class="category-name">Design</div>
+            <div class="category-count">987 jobs</div>
+            <a href="https://www.youngdesignersindia.com/Jobs" target="_blank" class="go-now-btn">Go Now</a>
+          </div>
+          <div class="category-card" data-category="engineering">
+            <div class="category-name">Engineering</div>
+            <div class="category-count">2,543 jobs</div>
+            <a href="https://www.linkedin.com/home/?originalSubdomain=in" target="_blank" class="go-now-btn">Go Now</a>
+          </div>
+          <div class="category-card" data-category="sales">
+            <div class="category-name">Sales</div>
+            <div class="category-count">1,876 jobs</div>
+            <a href="https://www.naukri.com/mnjuser/homepage" target="_blank" class="go-now-btn">Go Now</a>
+          </div>
+          <div class="category-card" data-category="hr">
+            <div class="category-name">Research</div>
+            <div class="category-count">734 jobs</div>
+            <a href="https://researchersjob.com/category/job/" target="_blank" class="go-now-btn">Go Now</a>
+
+          </div>
         </div>
-
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-20">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="text-center lg:text-left">
-                    <div class="fade-up">
-                        <h1 class="text-5xl lg:text-7xl font-black text-white mb-8 leading-tight">
-                            Start
-                            <span
-                                class="block text-gradient bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent">
-                                Learning
-                            </span>
-                            Bright Feature
-                        </h1>
-                    </div>
-
-                    <div class="fade-up delay-200">
-                        <p class="text-xl lg:text-2xl text-white/90 mb-6 font-medium">
-                            Step-by-step guidance to achieve your educational and career goals
-                        </p>
-                        <p class="text-lg text-white/70 mb-12 max-w-2xl">
-                            From school subjects to career skills, EduLearn guides you with personalized pathways to
-                            achieve your Goal and structured learning.
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="fade-up delay-600 hidden lg:block">
-                    <div class="relative">
-                        <!-- Modern 3D illustration -->
-                        <div class="glass rounded-3xl p-8 floating">
-                            <svg viewBox="0 0 400 300" class="w-full h-auto">
-                                <!-- Modern roadmap visualization -->
-                                <defs>
-                                    <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" style="stop-color:#667eea" />
-                                        <stop offset="50%" style="stop-color:#764ba2" />
-                                        <stop offset="100%" style="stop-color:#f093fb" />
-                                    </linearGradient>
-                                </defs>
-
-                                <!-- Animated path -->
-                                <path d="M50 250 Q100 200 150 220 T250 180 T350 150" stroke="url(#pathGradient)"
-                                    stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="400"
-                                    stroke-dashoffset="400">
-                                    <animate attributeName="stroke-dashoffset" values="400;0" dur="3s"
-                                        repeatCount="indefinite" />
-                                </path>
-
-                                <!-- Modern checkpoint nodes -->
-                                <circle cx="50" cy="250" r="12" fill="#4ADE80" class="drop-shadow-lg">
-                                    <animate attributeName="r" values="12;16;12" dur="2s" repeatCount="indefinite" />
-                                </circle>
-                                <circle cx="150" cy="220" r="12" fill="#60A5FA" class="drop-shadow-lg">
-                                    <animate attributeName="r" values="12;16;12" dur="2s" begin="0.5s"
-                                        repeatCount="indefinite" />
-                                </circle>
-                                <circle cx="250" cy="180" r="12" fill="#A78BFA" class="drop-shadow-lg">
-                                    <animate attributeName="r" values="12;16;12" dur="2s" begin="1s"
-                                        repeatCount="indefinite" />
-                                </circle>
-                                <circle cx="350" cy="150" r="12" fill="#F59E0B" class="drop-shadow-lg">
-                                    <animate attributeName="r" values="12;16;12" dur="2s" begin="1.5s"
-                                        repeatCount="indefinite" />
-                                </circle>
-                                <text x="50" y="300" text-anchor="middle" fill="white" font-size="14"
-                                    font-weight="600">Start</text>
-                                <text x="150" y="270" text-anchor="middle" fill="white" font-size="14"
-                                    font-weight="600">Learn</text>
-                                <text x="250" y="230" text-anchor="middle" fill="white" font-size="14"
-                                    font-weight="600">Build</text>
-                                <text x="350" y="200" text-anchor="middle" fill="white" font-size="14"
-                                    font-weight="600">Master</text>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
+    </p>
 
-    <section id="roadmaps" class="py-12 px-6 lg:px-8 bg-slate-800 relative">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12 fade-up">
-                <h2 class="text-3xl lg:text-4xl font-black text-white mb-4">
-                    Popular Learning
-                    <span class="text-gradient">Paths</span>
-                </h2>
-                <p class="text-md text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                    Explore expertly designed educational journeys crafted by industry experts and updated regularly to
-                    keep your learning relevant and impactful.
-                </p>
-            </div>
+  </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Academic Planing Card -->
-                 <form action="/academic" method="POST">
-                <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-100">
+</body>
 
-                    <h3 class="text-xl font-black text-white mb-2">Academic Planing</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">Plan your study schedule, track progress, and
-                        build strong academic foundations.</p>
-                    <button action="/academic" type="submit"
-                        class="w-full h-10 btn-modern bg-gradient-to-r from-green-500 to-emerald-600 text-white mt-4 py-3 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                        Start Learning
-                    </button>
-                </div>
-                </form>
-                <!-- Career Awareness Card -->
-                <form action="/career" method="POST">
-                    <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-200">
+</html>
 
-                        <h3 class="text-xl font-black text-white mb-2">Career Awareness</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">Explore different career options, discover
-                            your
-                            strengths, and align your learning with future opportunities.</p>
-                        <button action="/career" type="submit"
-                            class="w-full btn-modern bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 mt-4 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                            Start Learning
-                        </button>
-                    </div>
-                </form>
+</body>
 
-                <!-- Industry Connection Card -->
-                 <form action="/job_portal" method="POST" target="blank">
-                     <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-300">
-    
-                         <h3 class="text-xl font-black text-white mb-2">Job Portal</h3>
-                         <p class="text-white text-sm leading-relaxed">Build real-world knowledge by connecting academics
-                             with industry insights, internships, and projects</p>
-                         <button action="/job_portal" type="submit" 
-                             class="w-full btn-modern bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 mt-4 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                             Start Learning
-                         </button>
-                     </div>
-                 </form>
-
-                <!-- Govt. College Directory Card -->
-                <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-400">
-
-                    <h3 class="text-xl font-black text-white mb-2">College Directory</h3>
-                    <p class="text-white text-sm leading-relaxed">Get access to college information, admissions, and
-                        scholarship details.</p>
-                    <button
-                        class="w-full btn-modern bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-3 mt-4 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                        Start Learning
-                    </button>
-                </div>
-
-                <!-- Exam details -->
-                 <form action="/Exam_Details" method="post" target="blank">
-                     <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-500">
-     
-                         <h3 class="text-xl font-black text-white mb-2">Exam Details</h3>
-                         <p class="text-white text-sm leading-relaxed">Eligibility, Types , Preparation(Right to start ) in
-                             one place.</p>
-                         <button type="submit"
-                             class="w-full btn-modern bg-gradient-to-r from-red-600 to-pink-600 text-white py-3 mt-4 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                             Start Learning
-                         </button>
-                     </div>
-                 </form>
-
-                <!-- AI Dashboard Card -->
-                <div class="gradient-card rounded-2xl p-6 shadow-xl card-modern fade-up delay-600">
-                    <h3 class="text-xl font-black text-white mb-2">AI Dashboard</h3>
-                    <p class="text-white text-sm leading-relaxed">Use AI-powered insights to personalize your education
-                        journey, monitor progress, and set career goals.</p>
-                    <button
-                        class="w-full btn-modern bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 mt-4 rounded-lg font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                        Start Learning
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modern Search Section -->
-    <section class="py-24 px-6 lg:px-8 bg-slate-900">
-        <div class="max-w-5xl mx-auto text-center fade-up">
-            <h2 class="text-4xl lg:text-5xl font-black text-white mb-8">
-                Find Your Dream
-                <span class="text-gradient">collages</span>
-            </h2>
-
-            <div class="glass rounded-3xl p-12 shadow-2xl">
-                <div class="mb-8">
-                    <div class="relative max-w-2xl mx-auto">
-                        <input type="text" placeholder="Search roadmaps, skills, or technologies..."
-                            class="w-full px-8 py-6 pl-16 text-lg border-0 rounded-2xl bg-white shadow-lg focus:ring-4 focus:ring-blue-500/20 focus:outline-none transition-all duration-300">
-                        <div class="absolute left-6 top-6 text-gray-400 text-2xl">🔍</div>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-4">
-                    <select
-                        class="px-6 py-4 border-0 rounded-2xl bg-white shadow-lg focus:ring-4 focus:ring-blue-500/20 focus:outline-none font-medium">
-                        <option>All Categories</option>
-                        <option>Tech</option>
-                        <option>Design</option>
-                        <option>Business</option>
-                        <option>Language</option>
-                        <option>AI</option>
-                    </select>
-                    <select
-                        class="px-6 py-4 border-0 rounded-2xl bg-white shadow-lg focus:ring-4 focus:ring-blue-500/20 focus:outline-none font-medium">
-                        <option>All Levels</option>
-                        <option>Beginner</option>
-                        <option>Intermediate</option>
-                        <option> Advanced</option>
-                    </select>
-                    <select
-                        class="px-6 py-4 border-0 rounded-2xl bg-white shadow-lg focus:ring-4 focus:ring-blue-500/20 focus:outline-none font-medium">
-                        <option>All Formats</option>
-                        <option>Roadmap</option>
-                        <option>Course</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </section>
-    {% endblock %}
+{% endblock %}
 
 
 
 
-    {% block extra_js %}
-    <script src="{{ url_for('static', filename='JavaScript/1mainPage.js') }}"></script>
-    {% endblock %}
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JavaScript/main.js') }}"></script>
+{% endblock %}

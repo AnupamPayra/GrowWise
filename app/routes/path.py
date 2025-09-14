@@ -13,6 +13,16 @@ from app.class10.diploma import class_10
 from app.class10.profesional import class_10
 from app.class10.science import class_10
 from app.class10.vocational import class_10
+
+from app.career.business import Career_Awareness
+from app.career.creativeArts import Career_Awareness
+from app.career.education import Career_Awareness
+from app.career.healthcare import Career_Awareness
+from app.career.science import Career_Awareness
+from app.career.technology import Career_Awareness
+
+
+
 path_bp = Blueprint('path', __name__)
 
 
@@ -21,44 +31,46 @@ def home():
     return render_template("1mainPage.html")
 
 
-
+@path_bp.route('/about')
+def about():
+    return render_template('about.html')
 
 # career awerness
 @path_bp.route('/career', methods=["GET", "POST"])
 def career():
     if request.method == "POST":
-        return render_template("2main_career_awerness.html")
-    return render_template("2main_career_awerness.html")
+        return render_template("career.html")
+    return render_template("career.html")
 
-#its for technology file
-@path_bp.route('/Technology')#its for technology file
-def Technology():
-    return render_template("technology.html")
+# #its for technology file
+# @path_bp.route('/Technology')#its for technology file
+# def Technology():
+#     return render_template("technology.html")
 
-#its for helthcare file
-@path_bp.route('/helthcare')#its for helthcare file
-def helthcare():
-    return render_template("helthcare.html")
+# #its for helthcare file
+# @path_bp.route('/helthcare')#its for helthcare file
+# def helthcare():
+#     return render_template("helthcare.html")
 
-#its for business file
-@path_bp.route('/business')#its for business file
-def business():
-    return render_template("business.html")
+# #its for business file
+# @path_bp.route('/business')#its for business file
+# def business():
+#     return render_template("business.html")
 
-#its for creative file
-@path_bp.route('/creative')#its for creative file
-def creative():
-    return render_template("creative.html")
+# #its for creative file
+# @path_bp.route('/creative')#its for creative file
+# def creative():
+#     return render_template("creative.html")
 
-#its for education file
-@path_bp.route('/education')#its for creative file
-def education():
-    return render_template("education.html")
+# #its for education file
+# @path_bp.route('/education')#its for creative file
+# def education():
+#     return render_template("education.html")
 
-#its for science_&_research file
-@path_bp.route('/science__research')#its for creative file
-def science__research():
-    return render_template("science_&_research.html")
+# #its for science_&_research file
+# @path_bp.route('/science__research')#its for creative file
+# def science__research():
+#     return render_template("science_&_research.html")
 
 
 
@@ -179,4 +191,44 @@ def diploma():
 def professional():
     if request.method == "POST":
         return render_template('academic/pharmacy.html', pharmacy=class_10)
+    return render_template('academic/pharmacy+.html')
+
+
+
+
+# ==============================================After 10th ecademic======================================================
+@path_bp.route('/business', methods=["GET", "POST"])
+def business():
+    if request.method == "POST":
+        return render_template('academic/engineering.html', engineering=Career_Awareness)
+    return render_template('academic/engineering.html')
+
+@path_bp.route('/creativeArts', methods=["GET", "POST"])
+def creativeArts():
+    if request.method == "POST":
+        return render_template('academic/govtjob.html', govtjob=Career_Awareness)
+    return render_template('academic/govtjob.html')
+
+@path_bp.route('/education', methods=["GET", "POST"])
+def education():
+    if request.method == "POST":
+        return render_template('academic/graphicdesign.html', graphicdesign=Career_Awareness)
+    return render_template('academic/graphicdesign.html')
+
+@path_bp.route('/healthcare', methods=["GET", "POST"])
+def healthcare():
+    if request.method == "POST":
+        return render_template('academic/higherstudy.html', higherstudy=Career_Awareness)
+    return render_template('academic/higherstudy.html')
+
+@path_bp.route('/science', methods=["GET", "POST"])
+def sciencee():
+    if request.method == "POST":
+        return render_template('academic/medical.html', medical=Career_Awareness)
+    return render_template('academic/medical.html')
+
+@path_bp.route('/technology', methods=["GET", "POST"])
+def technology():
+    if request.method == "POST":
+        return render_template('academic/pharmacy.html', pharmacy=Career_Awareness)
     return render_template('academic/pharmacy+.html')
