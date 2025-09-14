@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Medical Field{% endblock %}
+
+{% block extra_css %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/academic/medical.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="hero">
+        <h1>After Class 12th Engineer career option</h1>
+    </div>
+
+    <!-- Technology Section -->
+    <div class="career-section">
+        <div class="career-content">
+            <div class="career-image tech-bg">
+                <div class="career-icon">
+                    <h1>After Twelfth</h1>
+                </div>
+            </div>
+
+            {% for key, course in higherstudy.items() %}
+            <section>
+                <h2>{{ course.heading }}</h2>
+                <p><span class="highlight">About:</span><br>
+                    {{ course.about }}
+                </p>
+                <p><span class="highlight">Description:</span><br>
+                    {{ course.description }}
+                </p>
+                <p><span class="highlight">Job Opportunities:</span> {{ course.opportunities }}</p>
+                <p><span class="highlight">Salary Range (Avg.):</span> {{ course.salary }}</p>
+                <div class="btn-group">
+                    <button class="explore-btn">{{ course.duration }}<br>Degree Duration</button>
+                    <button class="explore-btn">{{ course.demand }}<br>Job Demand</button>
+                </div>
+            </section>
+            {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JavaScript/academic/medical.js') }}"></script>
+{% endblock %}

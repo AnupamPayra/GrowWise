@@ -1,0 +1,89 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Medical Field{% endblock %}
+
+{% block extra_css %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/indexCollege3.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Header -->
+  <body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+      <a href="#state" class="block py-2 text-gray-600 hover:text-blue-600">State Level</a>
+      <a href="#national" class="block py-2 text-gray-600 hover:text-blue-600">National Level</a>
+      <a href="#international" class="block py-2 text-gray-600 hover:text-blue-600">International</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-16">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Find Your Perfect Scholarship</h1>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore a curated list of scholarships from state, national, and international bodies to fund your education and achieve your dreams.</p>
+  </section>
+
+  <!-- Search + Filters -->
+  <section class="mb-12 container mx-auto px-6">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-lg">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2">
+          <label for="search-box" class="block text-sm font-medium text-gray-700 mb-1">Search by Name</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+              <i class="fas fa-search text-gray-400"></i>
+            </span>
+            <input type="text" id="search-box" placeholder="e.g., Swami Vivekananda, Fulbright..." aria-label="Search scholarships by name" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Filter by Level</label>
+          <div id="filter-buttons" class="flex space-x-2">
+            <button class="filter-btn bg-blue-500 text-white px-4 py-2 rounded-lg flex-1" data-level="all">All</button>
+            <button class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex-1" data-level="State">State</button>
+            <button class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex-1" data-level="National">National</button>
+            <button class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex-1" data-level="International">International</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scholarships -->
+  <main class="container mx-auto px-6">
+    <section id="state" class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">Scholarships</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="scholarship-grid"></div>
+      <div class="text-center mt-8">
+        <button id="load-more" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">Load More</button>
+      </div>
+    </section>
+    <div id="no-results" class="hidden text-center py-16">
+      <i class="fas fa-search-minus text-5xl text-gray-400 mb-4"></i>
+      <h3 class="text-2xl font-semibold text-gray-700">No Scholarships Found</h3>
+      <p class="text-gray-500 mt-2">Try adjusting your search or filter criteria.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white mt-16">
+    <div class="container mx-auto px-6 py-8 text-center">
+      <p>&copy; 2025 Scholarship Finder. All Rights Reserved.</p>
+      <p class="text-sm text-gray-400 mt-2">Your dedicated portal for educational funding opportunities.</p>
+    </div>
+  </footer>
+
+</body>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JavaScript/scriptCollege3.js') }}"></script>
+{% endblock %}
+
+

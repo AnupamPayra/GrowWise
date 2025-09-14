@@ -1,0 +1,264 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCareers Hub - Explore Your Future in Technology</title>
+    <link rel="stylesheet" href="../css/technology.css">
+</head>
+<body>
+   
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Your Future in Technology Starts Here</h1>
+            <p>Discover exciting career opportunities in the ever-evolving world of technology</p>
+            
+        </div>
+    </section>
+
+    <main>
+        <section id="careers" class="section">
+            <div class="container">
+                <h2 class="section-title">Technology Career Paths</h2>
+                <div class="careers-grid">
+                    <div class="career-card" onclick="showCareerDetails('software-developer')">
+                        <span class="career-icon"></span>
+                        <h3>Software Developer</h3>
+                        <p>Create applications, websites, and software solutions that power our digital world.</p>
+                        <div class="salary-range">Avg Salary: ₹5–10 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Problem Solving</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('data-scientist')">
+                        <span class="career-icon"></span>
+                        <h3>Data Scientist</h3>
+                        <p>Analyze complex data to help organizations make informed business decisions.</p>
+                        <div class="salary-range">Avg Salary: ₹8–15 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">R</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Statistics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('cybersecurity')">
+                        <span class="career-icon"></span>
+                        <h3>Cybersecurity Specialist</h3>
+                        <p>Protect organizations from digital threats and ensure data security.</p>
+                        <div class="salary-range">Avg Salary: ₹6–12 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Network Security</span>
+                                <span class="skill-tag">Ethical Hacking</span>
+                                <span class="skill-tag">Risk Assessment</span>
+                                <span class="skill-tag">CISSP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('ux-designer')">
+                        <span class="career-icon"></span>
+                        <h3>UX/UI Designer</h3>
+                        <p>Design intuitive and engaging user experiences for digital products.</p>
+                        <div class="salary-range">Avg Salary: ₹4–8 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">User Research</span>
+                                <span class="skill-tag">Prototyping</span>
+                                <span class="skill-tag">Design Thinking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('cloud-engineer')">
+                        <span class="career-icon"></span>
+                        <h3>Cloud Engineer</h3>
+                        <p>Design and manage cloud infrastructure for scalable business solutions.</p>
+                        <div class="salary-range">Avg Salary: ₹7–13 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">Azure</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Kubernetes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('ai-engineer')">
+                        <span class="career-icon"></span>
+                        <h3>AI/ML Engineer</h3>
+                        <p>Build intelligent systems and machine learning models for automation.</p>
+                        <div class="salary-range">Avg Salary: ₹9–15 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">PyTorch</span>
+                                <span class="skill-tag">Deep Learning</span>
+                                <span class="skill-tag">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+       
+    </main>
+
+ 
+
+  <script>"../js/technology.js"</script>
+</body>
+</html> -->
+
+
+{% extends 'base.html' %}
+{% block title %}Technical{% endblock %}
+{% block extra_css %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/technology.css') }}">
+{% endblock %}
+
+
+
+
+{% block content %} 
+ <section id="home" class="hero">
+        <div class="container">
+            <h1>Your Future in Technology Starts Here</h1>
+            <p>Discover exciting career opportunities in the ever-evolving world of technology</p>
+            
+        </div>
+    </section>
+
+    <main>
+        <section id="careers" class="section">
+            <div class="container">
+                <h2 class="section-title">Technology Career Paths</h2>
+                <div class="careers-grid">
+                    <div class="career-card" onclick="showCareerDetails('software-developer')">
+                        <span class="career-icon"></span>
+                        <h3>Software Developer</h3>
+                        <p>Create applications, websites, and software solutions that power our digital world.</p>
+                        <div class="salary-range">Avg Salary: ₹5–10 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Problem Solving</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('data-scientist')">
+                        <span class="career-icon"></span>
+                        <h3>Data Scientist</h3>
+                        <p>Analyze complex data to help organizations make informed business decisions.</p>
+                        <div class="salary-range">Avg Salary: ₹8–15 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">R</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Statistics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('cybersecurity')">
+                        <span class="career-icon"></span>
+                        <h3>Cybersecurity Specialist</h3>
+                        <p>Protect organizations from digital threats and ensure data security.</p>
+                        <div class="salary-range">Avg Salary: ₹6–12 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Network Security</span>
+                                <span class="skill-tag">Ethical Hacking</span>
+                                <span class="skill-tag">Risk Assessment</span>
+                                <span class="skill-tag">CISSP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('ux-designer')">
+                        <span class="career-icon"></span>
+                        <h3>UX/UI Designer</h3>
+                        <p>Design intuitive and engaging user experiences for digital products.</p>
+                        <div class="salary-range">Avg Salary: ₹4–8 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">User Research</span>
+                                <span class="skill-tag">Prototyping</span>
+                                <span class="skill-tag">Design Thinking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('cloud-engineer')">
+                        <span class="career-icon"></span>
+                        <h3>Cloud Engineer</h3>
+                        <p>Design and manage cloud infrastructure for scalable business solutions.</p>
+                        <div class="salary-range">Avg Salary: ₹7–13 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">Azure</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Kubernetes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card" onclick="showCareerDetails('ai-engineer')">
+                        <span class="career-icon"></span>
+                        <h3>AI/ML Engineer</h3>
+                        <p>Build intelligent systems and machine learning models for automation.</p>
+                        <div class="salary-range">Avg Salary: ₹9–15 LPA</div>
+                        <div class="skills-required">
+                            <h4>Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">PyTorch</span>
+                                <span class="skill-tag">Deep Learning</span>
+                                <span class="skill-tag">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}
+
+
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JavaScript/technology.js') }}"></script>
+{% endblock %}

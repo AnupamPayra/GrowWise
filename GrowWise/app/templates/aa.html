@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Quiz</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      /* white background */
+      color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .quiz-container {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 12px;
+      width: 500px;
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+      color: #000;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      color: #22c55e;
+    }
+
+    .question {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .options label {
+      display: block;
+      background: #ffffff;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .options input {
+      margin-right: 10px;
+    }
+
+    .options label:hover {
+      background: #f1f5f9;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    #prevBtn {
+      background: #475569;
+      color: white;
+    }
+
+    #nextBtn {
+      background: #22c55e;
+      color: white;
+    }
+
+    #submitBtn {
+      background: #3b82f6;
+      color: white;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="quiz-container">
+    <h2><span class="highlight">Career</span> Quiz</h2>
+    <div id="quiz-box"></div>
+
+    <div class="buttons">
+      <button id="prevBtn" onclick="prevQuestion()">Previous</button>
+      <button id="nextBtn" onclick="nextQuestion()">Next</button>
+      <button id="submitBtn" onclick="submitQuiz()">Submit</button>
+    </div>
+  </div>
+
+  <script>const quizData = [
+      {
+        question: "1. Which class are you studying in right now?",
+        options: ["Class 8 or below", "Class 9 - 10", "Class 11 - 12"]
+      },
+      {
+        question: "2. Which subject do you find easiest to understand?",
+        options: [
+          "Maths (solving sums, numbers)",
+          "Science (plants, body, experiments)",
+          "Drawing, acting, singing, writing",
+          "Business (buying/selling, farming, shop work)"
+        ]
+      },
+      {
+        question: "3. What do you enjoy doing in your free time?",
+        options: [
+          "Repairing or fixing things (like cycle, mobile)",
+          "Helping in farm or learning about health/animals",
+          "Singing, drawing, telling stories",
+          "Helping shop work, selling things, handling money"
+        ]
+      },
+      {
+        question: "4. What do you dream of becoming in future?",
+        options: [
+          "Engineer or working with machines",
+          "Doctor, nurse, or science researcher",
+          "Teacher, artist, or writer",
+          "Business person or government officer",
+          "Government service (police, army, civil service)"
+        ]
+      }
+    ];
+
+    let currentQuestion = 0;
+    let answers = [];
+
+    function loadQuestion() {
+      const quizBox = document.getElementById("quiz-box");
+      const questionData = quizData[currentQuestion];
+
+      quizBox.innerHTML = `
+    <div class="question">${questionData.question}</div>
+    <div class="options">
+      ${questionData.options.map(opt => `
+        <label>
+          <input type="radio" name="q${currentQuestion}" value="${opt}" 
+            ${answers[currentQuestion] === opt ? "checked" : ""}>
+          ${opt}
+        </label>
+      `).join("")}
+    </div>
+  `;
+
+      document.getElementById("prevBtn").style.display =
+        currentQuestion === 0 ? "none" : "inline-block";
+      document.getElementById("nextBtn").style.display =
+        currentQuestion === quizData.length - 1 ? "none" : "inline-block";
+      document.getElementById("submitBtn").style.display =
+        currentQuestion === quizData.length - 1 ? "inline-block" : "none";
+    }
+
+    function saveAnswer() {
+      const selected = document.querySelector(input[name = "q${currentQuestion}"]: checked);
+      if (selected) {
+        answers[currentQuestion] = selected.value;
+      }
+    }
+
+    function nextQuestion() {
+      saveAnswer();
+      if (currentQuestion < quizData.length - 1) {
+        currentQuestion++;
+        loadQuestion();
+      }
+    }
+
+    function prevQuestion() {
+      saveAnswer();
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion();
+      }
+    }
+
+    function submitQuiz() {
+      saveAnswer();
+
+      let scienceCount = 0, commerceCount = 0, artsCount = 0;
+
+      answers.forEach(ans => {
+        const a = ans.toLowerCase();
+
+        if (a.includes("maths") || a.includes("science") || a.includes("engineer") || a.includes("doctor")) {
+          scienceCount++;
+        }
+        if (a.includes("business") || a.includes("selling") || a.includes("money") || a.includes("government officer")) {
+          commerceCount++;
+        }
+        if (a.includes("drawing") || a.includes("singing") || a.includes("teacher") || a.includes("writer")) {
+          artsCount++;
+        }
+      });
+
+      let result = "";
+      if (scienceCount >= commerceCount && scienceCount >= artsCount) {
+        result = "🔬 Best Stream: <b>Science</b><br>You enjoy logic, problem-solving, or medical/engineering fields.";
+      } else if (commerceCount >= scienceCount && commerceCount >= artsCount) {
+        result = "💼 Best Stream: <b>Commerce</b><br>You are good with money, business, or management-related skills.";
+      } else {
+        result = "🎨 Best Stream: <b>Arts/Humanities</b><br>You are creative, expressive, and like teaching or storytelling.";
+      }
+
+      document.getElementById("quiz-box").innerHTML = `
+    <h3>✅ Quiz Completed!</h3>
+    <p><strong>Your Answers:</strong></p>
+    <ul>${answers.map(a => <li>${a}</li>).join("")}</ul>
+    <hr>
+    <h3>${result}</h3>
+  `;
+
+      document.querySelector(".buttons").style.display = "none";
+    }
+
+    loadQuestion();
+  </script>
+</body>
+
+</html>

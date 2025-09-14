@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block title %}Medical Field{% endblock %}
+
+{% block extra_css %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/class12.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<header>
+  <h1>Career Choices After 10th – Streams & Courses</h1>
+</header>
+
+<div class="grid-container">
+
+  <form action="/science" method="POST" target="_blank">
+    <div class="course-card">
+      <h2>Science</h2>
+      <p>
+        Focuses on subjects like Physics, Chemistry, Maths, and Biology. Opens pathways to engineering, medical, research, IT, and pure sciences. Best for analytical and problem-solving careers.
+      </p>
+      <button class="explore-btn" type="submit">Explore More</button>
+    </div>
+  </form>
+
+  <form action="/commerce" method="POST" target="_blank">
+    <div class="course-card">
+      <h2>Commerce</h2>
+      <p>
+        Deals with business, finance, economics, and management. Leads to careers in accounting, banking, entrepreneurship, corporate law, and management studies.
+      </p>
+      <button class="explore-btn" type="submit">Explore More</button>
+    </div>
+  </form>
+
+  <form action="/arts" method="POST" target="_blank">
+    <div class="course-card">
+      <h2>Arts</h2>
+      <p>
+        Includes subjects like History, Political Science, Psychology, Sociology, Literature, Fine Arts, and Journalism. Ideal for creative, social science, media, and civil service careers.
+      </p>
+      <button class="explore-btn" type="submit">Explore More</button>
+    </div>
+  </form>
+
+  <form action="/vocational" method="POST" target="_blank">
+    <div class="course-card">
+      <h2>Vocational</h2>
+      <p>
+        Practical and skill-based courses (like Fashion Designing, Animation, Tourism, IT, Paramedical). Provides job-ready skills in specific industries.
+      </p>
+      <button class="explore-btn" type="submit">Explore More</button>
+    </div>
+  </form>
+
+  <form action="/diploma" method="POST" target="_blank">
+    <div class="course-card">
+      <h2>Higher Study</h2>
+      <p>
+        Technical programs after 10th or 12th in fields like Engineering, IT, Mechanical, Civil, and Electronics. Good for early entry into technical jobs or further studies (B.Tech, etc.).
+      </p>
+      <button class="explore-btn" type="submit">Explore More</button>
+    </div>
+  </form>
+
+  <form action="/professional" method="POST" target="_blank">
+    <div class="course-card">
+      <h2>Professional</h2>
+      <p>
+        Specialized career-focused programs like CA, CS, CMA, Law, Design, Hotel Management, and Aviation. Prepares students directly for professional roles in industry.
+      </p>
+      <button class="explore-btn" type="submit">Explore More</button>
+    </div>
+  </form>
+
+</div>
+
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JavaScript/class12.js') }}"></script>
+{% endblock %}
+
+
+
+

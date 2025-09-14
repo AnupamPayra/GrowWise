@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}EDUlearn{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/main.css' ) }}">
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <header class="navbar">
+    
+    <div class="logo">
+      EduLearn
+    </div>
+
+
+
+    <div class="right-section">
+    <nav id="nav-links" class="nav-links">
+        <!-- <a href="{{ url_for('path.scolership') }}">scolership</a> -->
+      <a href="#">Home</a>
+      <a href="{{ url_for('path.about') }}">About Us</a>
+      <a href="#">Admission</a>
+    </nav>
+    <div class="buttons">
+        <form action="/sign" method="post">
+        <button type="submit">
+      <button class="btn-outline">Login</button>
+      </button>
+      </form>
+
+
+      <!-- <form action="/login" method="post">
+        <button type="submit">
+      <button class="btn-outline">log in</button>
+      </button>
+      </form> -->
+
+    </div>
+    </div>
+  </header>
+
+
+    {% block content %} {% endblock %}
+
+    <footer class="bg-gray-900 text-white py-20 px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-5 gap-12 mb-16">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                            <span class="text-white font-black text-2xl">E</span>
+                        </div>
+                        <div>
+                           
+                            <p class="text-gray-400 text-lg">Journey to Mastery</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-8 text-lg leading-relaxed max-w-md">
+                        Helping students everywhere with guided learning journeys designed to simplify complex topics, build confidence, and support lifelong learning.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-black mb-6 text-xl" id="sec">Section</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Academic Planning</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Career Awarenees</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Job Portal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">College Directory</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Aplitude Quiz</a></li>
+                    </ul>
+                </div>
+                
+    
+                
+                <div>
+                    <h4 class="font-black mb-6 text-xl"> About</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='JavaScript/base.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>
