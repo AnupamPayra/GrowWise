@@ -20,18 +20,25 @@
 
     <div class="right-section">
     <nav id="nav-links" class="nav-links">
-        <a href="{{ url_for('path.scolership') }}">scolership</a>
+        <!-- <a href="{{ url_for('path.scolership') }}">scolership</a> -->
       <a href="#">Home</a>
       <a href="{{ url_for('path.about') }}">About Us</a>
       <a href="#">Admission</a>
     </nav>
     <div class="buttons">
-        <form action="/signup" method="post">
+        <form action="/sign" method="post">
         <button type="submit">
-      <button class="btn-outline">Sign in</button>
+      <button class="btn-outline">Login</button>
       </button>
       </form>
-      <button class="btn-primary">Login</button>
+
+
+      <!-- <form action="/login" method="post">
+        <button type="submit">
+      <button class="btn-outline">log in</button>
+      </button>
+      </form> -->
+
     </div>
     </div>
   </header>

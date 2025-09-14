@@ -1,42 +1,54 @@
-{% extends 'base.html' %}
-{% block title %}Login page{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gradient-creative {
+            background-image: linear-gradient(135deg, #A855F7 0%, #D8B4FE 100%);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-br from-violet-100 to-purple-200">
 
-{% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='CSS/login.css') }}">
-{% endblock %}
-{% block content %}
-<!-- Animated background particles -->
-<div class="particles" id="particles"></div>
-
-<div class="login-container">
-    <div class="login-header">
-        <h1>Welcome</h1>
-        <p>Sign in to your account</p>
+    <!-- Login Card Container -->
+    <div class="bg-white p-8 sm:p-12 rounded-2xl shadow-2xl w-full max-w-sm sm:max-w-md mx-4">
+        <div class="text-center mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-16 h-16 text-purple-600 mx-auto mb-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 19.5h15c-1.332-1.921-2.906-3.328-4.87-4.234a9.92 9.92 0 00-5.26 0c-1.964.906-3.538 2.313-4.87 4.234z" />
+            </svg>
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Welcome Back!</h1>
+            <p class="text-gray-500">Sign in to your EduLearn account.</p>
+        </div>
+        
+        <!-- Login Form -->
+        <form action="/login" method="POST" class="space-y-6">
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                <div class="mt-1">
+                    <input id="username" name="username" type="username" autocomplete="username" required class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors duration-300">
+                </div>
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                <div class="mt-1">
+                    <input id="email" name="email" type="email" autocomplete="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors duration-300">
+                </div>
+            </div>
+            
+            <div>
+                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md font-semibold text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-colors duration-300">
+                    Sign In
+                </button>
+            </div>
+        </form>
     </div>
 
-    <form method="POST" action="/login" id="loginForm">
-        <div class="form-group">
-            <input type="text" class="form-input" id="username" name="username" placeholder=" " required>
-            <label class="form-label" for="username">Username</label>
-        </div>
-
-        <div class="form-group">
-            <input type="password" name="password" class="form-input" id="password" placeholder=" " required>
-            <label class="form-label" for="password">Password</label>
-        </div>
-
-        <button type="submit" class="login-btn">
-            Sign In
-        </button>
-    </form>
-
-    <div class="forgot-password">
-        <a href="{{ url_for('auth.logout' ) }}">Forgot your password?</a>
-    </div>
-
-    <div class="success-animation" id="successAnimation"></div>
-</div>
-{% endblock %}
-{% block scripts %}
-<!-- <script src="{{ url_for('static', filename='JS/login.JS') }}"></script> -->
-{% endblock %}
+</body>
+</html>
