@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verified Government Colleges - Accredited Universities & Student Reviews</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="3" fill="white" opacity="0.08"/><circle cx="50" cy="10" r="1.5" fill="white" opacity="0.12"/></svg>');
+            animation: drift 15s linear infinite;
+        }
+        
+        @keyframes drift {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100px);
+            }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        
+        .verification-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .verification-badge::before {
+            content: '✅';
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .search-filters {
+            background: white;
+            margin: -30px 20px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .filter-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr auto;
+            gap: 20px;
+            align-items: end;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .filter-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+        
+        .filter-input,
+        .filter-select {
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .filter-input:focus,
+        .filter-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .filter-select:disabled {
+            background-color: #e2e8f0;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
+        .search-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            height: fit-content;
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .colleges-section {
+            padding: 40px 0;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .results-count {
+            font-size: 1.1rem;
+            color: #718096;
+        }
+        
+        .sort-options {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .sort-select {
+            padding: 8px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            font-size: 0.9rem;
+        }
+        
+        .colleges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .college-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .college-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .college-image {
+            height: 200px;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .verification-status {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #38a169;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .verification-status::before {
+            content: '✅';
+        }
+        
+        .college-content {
+            padding: 25px;
+        }
+        
+        .college-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .college-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .college-location {
+            color: #718096;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .college-location::before {
+            content: '📍';
+        }
+        
+        .ranking-badge {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .college-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 12px;
+            background: #f7fafc;
+            border-radius: 12px;
+        }
+        
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #4c51bf;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .college-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        
+        .feature-tag {
+            background: #e6fffa;
+            color: #234e52;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .reviews-preview {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f0fff4;
+            border-left: 4px solid #38a169;
+            border-radius: 8px;
+        }
+        
+        .review-stars {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .stars {
+            color: #fbbf24;
+            font-size: 1rem;
+        }
+        
+        .review-count {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        .review-text {
+            font-size: 0.9rem;
+            color: #2d3748;
+            font-style: italic;
+            line-height: 1.5;
+        }
+        
+        .college-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .load-more {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .load-more-btn {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .load-more-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid #fff;
+            width: 16px;
+            height: 16px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="verification-badge">All Colleges Verified & Accredited</div>
+            <h1>🏛 Verified Government Colleges</h1>
+            <p class="header-subtitle">Access comprehensive information about accredited government colleges and universities with verified details, rankings, and authentic student reviews</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="search-filters">
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label class="filter-label">Search Colleges</label>
+                    <input type="text" class="filter-input" placeholder="Search by name, major, or keyword..." id="searchInput">
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Location</label>
+                    <select class="filter-select" id="locationFilter">
+                        <option value="">All Locations</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Type</label>
+                    <select class="filter-select" id="typeFilter">
+                        <option value="">All Types</option>
+                        <option value="government">Government</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Course</label>
+                    <select class="filter-select" id="courseFilter">
+                        <option value="">All Courses</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="medical">Medical</option>
+                        <option value="general">General</option>
+                        <option value="management">Management</option>
+                        <option value="pharmacy">Pharmacy</option>
+                        <option value="agriculture">Agriculture</option>
+                    </select>
+                </div>
+                <button class="search-btn" id="searchBtn">Search</button>
+            </div>
+        </div>
+
+        <section class="colleges-section">
+            <div class="section-header">
+                <div class="results-count" id="resultsCount"></div>
+                <div class="sort-options">
+                    <label for="sortSelect">Sort by:</label>
+                    <select class="sort-select" id="sortSelect">
+                        <option value="relevance">Relevance</option>
+                        <option value="ranking">Ranking</option>
+                        <option value="tuition-low">Tuition (Low to High)</option>
+                        <option value="tuition-high">Tuition (High to Low)</option>
+                        <option value="acceptance">Acceptance Rate</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="colleges-grid" id="collegesGrid">
+            </div>
+
+            <div class="load-more">
+                <button class="load-more-btn" id="loadMoreBtn">Load More Colleges</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const collegesData = [{
+            name: "Jadavpur University",
+            location: "Kolkata, West Bengal",
+            url: "http://www.jaduniv.edu.in/",
+            type: "Government",
+            course: "Engineering",
+            ranking: "#1 State",
+            tuition: "₹10,000",
+            acceptance: "15-85%",
+            size: "11,520",
+            rating: 4.8,
+            reviews: 1892,
+            features: ["Patient Care", "Low Fees", "Scholarship"],
+            reviewText: "The college has a rigorous curriculum, which prepares you well for clinical practice. Faculty are supportive and approachable",
+            emoji: "🔬"
+        }, {
+            name: "Indian Institute of Engineering Science & Technology (IIEST)",
+            location: "Kolkata, West Bengal",
+            url: "https://www.iiests.ac.in/",
+            type: "Government",
+            course: "Engineering",
+            ranking: "#5 State",
+            tuition: "₹4,455",
+            acceptance: "15-85%",
+            size: "9,520",
+            rating: 4.8,
+            reviews: 1492,
+            features: ["Top Research", "Low Fees", "Strong Alumni"],
+            reviewText: "World-class education at a minimal cost. The research culture is unparalleled in the country.",
+            emoji: "🔬"
+        }, {
+            name: "University of Calcutta",
+            location: "Kolkata, West Bengal",
+            url: "https://www.caluniv.ac.in/",
+            type: "Government",
+            course: "Engineering",
+            ranking: "#4 State",
+            tuition: "₹5,000",
+            acceptance: "30.8%",
+            size: "45,057",
+            rating: 4.5,
+            reviews: 2156,
+            features: ["Historic University", "Diverse Courses", "Central Location"],
+            reviewText: "A great place for pursuing general arts and science degrees with a rich history and experienced faculty.",
+            emoji: "🐻"
+        }, {
+            name: "Government College of Engineering & Leather Technology (GCELT)",
+            location: "Block LB-11, Sector-III, Salt Lake, Kolkata — 700106",
+            url: "http://gcelt.gov.in/",
+            type: "Government",
+            course: "Engineering",
+            ranking: "#14 State",
+            tuition: "₹5,000",
+            acceptance: "35-40%",
+            size: "700",
+            rating: 3.9,
+            reviews: 156,
+            features: ["Specialty in Leather Technology (historic), also offers CSE/IT; urban Salt Lake campus; AICTE approved; affiliated to MAKAUT"],
+            reviewText: "Careers360 / college listing pages list GCELT; ratings limited on mainstream portals (use Careers360/Careers listings).",
+            emoji: "🐻"
+        }, {
+            name: "Vidyasagar College",
+            location: "39, Sankar Ghosh Lane, Kolkata - 700006, West Bengal",
+            url: "https://www.vidyasagarcollege.edu.in/",
+            type: "Government",
+            course: "Engineering",
+            ranking: "#14 State",
+            tuition: "₹5,000",
+            acceptance: "30.8%",
+            size: "45,057",
+            rating: 4.5,
+            reviews: 2156,
+            features: ["Historic University", "Diverse Courses", "Central Location"],
+            reviewText: "a range of facilities designed to support academic excellence, student well-being, and extracurricular engagement.",
+            emoji: "🐻"
+        }, {
+            name: "Kalyani Government Engineering College",
+            location: "Kalyani, Nadia district, West Bengal",
+            url: "https://www.kgec.edu.in",
+            type: "Government",
+            course: "Engineering",
+            ranking: "#201-300 State",
+            tuition: "₹13,000",
+            acceptance: "0.19%",
+            size: "75-acre campus",
+            rating: 4.2,
+            reviews: 1156,
+            features: ["Academic Infrastructure", " Camous Facilites", "Hostel & Accommodation"],
+            reviewText: "A range of facilities designed to support academic excellence, student well-being, and extracurricular engagement.",
+            emoji: "🐻"
+        }, {
+            name: "Jalpaiguri Government Engineering college(JGEC)",
+            location: "Jalpaiguri, West Bengal",
+            url: "https://jgec.ac.in/",
+            type: "Government",
+            course: "Engineering",
+            ranking: "#149 State",
+            tuition: "₹48,000",
+            acceptance: "0.5",
+            size: "165 acres",
+            rating: 4.1,
+            reviews: 565,
+            features: ["Academic Infrastructure", " Camous Facilites", "Hostel & Accommodation"],
+            reviewText: "a premier public technical institution in West Bengal, offering a blend of academic excellence and holistic development.",
+            emoji: "🐻"
+        }, {
+            name: "Medical College",
+            location: "Kolkata, West Bengal",
+            url: "http://www.jaduniv.edu.in/",
+            type: "Government",
+            course: "Medical",
+            ranking: "#41 State",
+            tuition: "₹40,500",
+            acceptance: "5.1%",
+            size: "26 acres",
+            rating: 4.6,
+            reviews: 3121,
+            features: ["Oldest & Heritage", "Large Teaching Hospital", "Special units"],
+            reviewText: "Its a great and affortable college",
+            emoji: "🔬"
+        }, {
+            name: "Barasat Government Medical College & Hospital",
+            location: "North 24 Parganas, West Bengal",
+            url: "https://barasatgmch.ac.in",
+            type: "Government",
+            course: "Medical",
+            ranking: "#1 State",
+            tuition: "₹9,000",
+            acceptance: "0.5-2% ",
+            size: "20.53 arces",
+            rating: 4.3,
+            reviews: 592,
+            features: ["Academic Program", "Hospital & clinical services", "Academic & Campus Infrastructure"],
+            reviewText: "It is affiliated with the West Bengal University of Health Sciences (WBUHS) and recognized by the National Medical Commission (NMC).",
+            emoji: "🔬"
+        }, {
+            name: "RG Kar Medical College and Hospital",
+            location: "Bidhan Sarani, Shyambazar, Kolkata, West Bengal 700004",
+            url: "https://www.rgkarmch.in/",
+            type: "Government",
+            course: "Medical",
+            ranking: "#7 State",
+            tuition: "₹12,000",
+            acceptance: "85% ",
+            size: "4 arces",
+            rating: 4.5,
+            reviews: 4592,
+            features: ["Diverse Courses", "Hospital and Infrastructure", "Vibrant Student Community"],
+            reviewText: "The teaching is described as overwhelmingly good with highly experienced professors who are knowledgeable and supportive.",
+            emoji: "🔬"
+        }, {
+            name: "Calcutta National Medical College",
+            location: "32 G0archand Road, Beniapukur, Kolkata, West Bengal",
+            url: "https://www.cnmckolkata.com",
+            type: "Government",
+            course: "Medical",
+            ranking: "#5 State",
+            tuition: "₹4,000",
+            acceptance: "85% ",
+            size: "3 arces",
+            rating: 5.0,
+            reviews: 1592,
+            features: ["medical education", "healthcare services", "Research Infrastructure"],
+            reviewText: "it offers quality education and clinical exposure, student experiences vary based on personal preferences and expectations.",
+            emoji: "🔬"
+        }, {
+            name: "College of Medicine & JNF Hospital",
+            location: "JNM Hospital Road, Kalyani, Nadia, West Bengal, 741235",
+            url: "https://comjnmh.ac.in",
+            type: "Government",
+            course: "Medical",
+            ranking: "#9 State",
+            tuition: "₹9,000",
+            acceptance: "85%",
+            size: "76.3 arces",
+            rating: 3.8,
+            reviews: 592,
+            features: ["Academic Program", "Hospital & clinical services", "Academic & Campus Infrastructure"],
+            reviewText: "Reviews indicate that while the curriculum is well-maintained in the initial years, the final year syllabus is considered vast and challenging to complete within one year.",
+            emoji: "🔬"
+        }, {
+            name: "Employees' State Insurance Corporation (ESIC)",
+            location: "JNM Hospital Road, Kalyani, Nadia, West Bengal, 741235",
+            url: "https://esic.gov.in",
+            type: "Government",
+            course: "Medical",
+            ranking: "#9 State",
+            tuition: "₹9,000",
+            acceptance: "85%",
+            size: "76.3 arces",
+            rating: 4.7,
+            reviews: 592,
+            features: ["Academic Program", "Hospital & clinical services", "Academic & Campus Infrastructure"],
+            reviewText: "Reviews indicate that while the curriculum is well-maintained in the initial years, the final year syllabus is considered vast and challenging to complete within one year.",
+            emoji: "🔬"
+        }, {
+            name: "Bidhan Chandra Krishi Viswavidyalaya (BCKV)",
+            location: "Mohanpur, Nadia",
+            url: "https://www.bckv.edu.in",
+            type: "Government",
+            course: "Agriculture",
+            ranking: "#3 state",
+            tuition: "₹13,000",
+            acceptance: "85% ",
+            size: "1640 arces",
+            rating: 4.1,
+            reviews: 592,
+            features: ["Academic Excellence", "Student life & Amenities", "Campus Infrastructure"],
+            reviewText: "The infrastructure of BCKV is top-notch and very well-furnished. It has a huge library with Wi-Fi facilities, all kinds of practical labs, and good workshops.",
+            emoji: "🔬"
+        }, {
+            name: "Uttar Banga Krishi Viswavidyalaya (UBKV)",
+            location: "Pundibari, approximately 11 km northwest of Cooch Behar, West Bengal",
+            url: "https://www.ubkv.ac.in",
+            type: "Government",
+            course: "Agriculture",
+            ranking: "#5 State",
+            tuition: "₹4,000",
+            acceptance: "85% ",
+            size: "330 arces",
+            rating: 5.0,
+            reviews: 1592,
+            features: [" educational philosophy", " Classes are famously held in the open air"],
+            reviewText: "The faculty is often described as friendly, helpful, and very supportive.",
+            emoji: "🔬"
+        }, {
+            name: "Visva-Bharati University",
+            location: "Santiniketan, West Bengal, India.",
+            url: "https://www.bckv.edu.in",
+            type: "Government",
+            course: "Agriculture",
+            ranking: "#17,NIRF",
+            tuition: "₹13,000",
+            acceptance: "85% ",
+            size: "1,128.895 arces",
+            rating: 4.5,
+            reviews: 92,
+            features: ["Academic Excellence", "Student life & Amenities", "Campus Infrastructure"],
+            reviewText: "The faculty is often described as friendly, helpful, and very supportive. Students appreciate the quality of teaching and the deep knowledge of their professors, especially in humanities and language departments like Chinese.",
+            emoji: "🔬"
+        }, {
+            name: "Institute of Pharmacy, Jalpaiguri",
+            location: "Jalpaiguri, West Bengal",
+            url: "https://wbuhs.ac.in/Affiliated%20Courses/institute-of-pharmacy-jalpaiguri/",
+            type: "Government",
+            course: "Pharmacy",
+            ranking: "#100-125 NIRF",
+            tuition: "₹4,400 - ₹54,000",
+            acceptance: "85% ",
+            size: "8 arces",
+            rating: 4.5,
+            reviews: 3400,
+            features: ["Educational Philosophy", "UNESCO World Heritage Site", "Campus and Facilities"],
+            reviewText: "The university's strong focus on academics and research is a draw for many students. For those interested in pursuing higher studies or a career in academia.",
+            emoji: "🔬"
+        }, {
+            name: "National Institute of Pharmaceutical Education and Research (NIPER)",
+            location: "Mohanpur, Nadia",
+            url: " https://www.niperkolkata.edu.in/",
+            type: "Government",
+            course: "Pharmacy",
+            ranking: "#29 NIRF",
+            tuition: "₹12,000-17,000",
+            acceptance: "85% ",
+            size: "200 arces",
+            rating: 4.3,
+            reviews: 172,
+            features: ["Postgraduate (MS (Pharm), M.Tech)", "Laboratories", "Doctoral (Ph.D.)"],
+            reviewText: "The teaching style is praised for being practical and industry-oriented, with a strong emphasis on research.",
+            emoji: "🔬"
+        }, {
+            name: "The University of Burdwan",
+            location: "Burdwan Rajbati, Raiganj, Bardhaman, West Bengal 713104",
+            url: " http://www.buruniv.ac.in/",
+            type: "Government",
+            course: "Management",
+            ranking: "#151-200 NIRF",
+            tuition: "₹24,000",
+            acceptance: "0.20% ",
+            size: "316.31 arces",
+            rating: 4.4,
+            reviews: 3592,
+            features: ["Academic Excellence", "Student life ", "Campus Infrastructure"],
+            reviewText: " Reviewers often praise the helpful and knowledgeable faculty and the low tuition fees, which offer excellent value for money.",
+            emoji: "🔬"
+        }, {
+            name: " Indian Statistical Institute (ISI)",
+            location: "Kolkata, West Bengal ",
+            url: "https://www.isical.ac.in/.",
+            type: "Government",
+            course: "Management",
+            ranking: "#75 NIRF",
+            tuition: "₹48,000/2yr",
+            acceptance: "0.20% ",
+            size: "316.31 arces",
+            rating: 4.4,
+            reviews: 3592,
+            features: ["Academic Excellence", "Student life ", "Campus Infrastructure"],
+            reviewText: " Reviewers often praise the helpful and knowledgeable faculty and the low tuition fees, which offer excellent value for money.",
+            emoji: "🔬"
+        }, {
+            name: " Indian Institute of Social Welfare and Business Management (IISWBM)",
+            location: "Madan Mohan Sen Street, Behind Ph.D Section, Calcutta University, Kolkata, West Bengal 700073, India.",
+            url: " http://www.iiswbm.edu/",
+            type: "Government",
+            course: "Management",
+            ranking: "#55,IIRF",
+            tuition: "₹24,000",
+            acceptance: "1% ",
+            size: "1,786 square meters",
+            rating: 4.0,
+            reviews: 122,
+            features: ["Historical Significance", " Unique Academic Focus", "Research & Consultancy"],
+            reviewText: " the excellent ROI offered by the institute. Students feel that for the tuition fees paid, the placement packages are quite good.",
+            emoji: "🔬"
+        }, {
+            name: " Indian Institute of Technology (IIT) Kharagpur",
+            location: "Kharagpur, Paschim Medinipur, West Bengal",
+            url: "https://www.iitkgp.ac.in/",
+            type: "Government",
+            course: "Management",
+            ranking: "#7,NIRF",
+            tuition: "₹4,31333",
+            acceptance: "1% ",
+            size: "2,100 arces",
+            rating: 5.0,
+            reviews: 6410,
+            features: ["Academic Excellence", "Student life & Amenities", "Campus Infrastructure"],
+            reviewText: "Students appreciate the vastness of the campus, the availability of sports facilities, and the central library, which is one of the largest in Asia.",
+            emoji: "🔬"
+        }, {
+            name: "Indian Institute of Foreign Trade (IIFT), Kolkata",
+            location: "1583 Madurdaha, Chowbagha Road, Ward No 108, Borough XII, Kolkata 700107",
+            url: "https://www.iift.ac.in.",
+            type: "Government",
+            course: "Management",
+            ranking: "#27,NIRF",
+            tuition: "₹10,00000",
+            acceptance: "1% ",
+            size: "7 arces",
+            rating: 4.6,
+            reviews: 595,
+            features: ["Academic Excellence", "Student life & Amenities", "Campus Infrastructure"],
+            reviewText: "The faculty is often described as friendly, helpful, and very supportive. Students appreciate the quality of teaching and the deep knowledge of their professors, especially in humanities and language departments like Chinese.",
+            emoji: "🔬"
+        }, {
+            name: " Alipurduar college ",
+            location: " Alipurduar, West Bengal 736122",
+            url: " https://alipurduaruniversity.ac.in/",
+            type: "Government",
+            course: "General",
+            ranking: "",
+            tuition: "₹3,740",
+            acceptance: "depend seat",
+            size: "23 acres",
+            rating: 4.0,
+            reviews: 521,
+            features: ["Diverse Academic Programs", "Affordable Fees", "Laboratories"],
+            reviewText: "Many students praise the low tuition fees, which makes higher education accessible to all.",
+            emoji: "🔬"
+        }, {
+            name: "Siliguri Government Polytechnic",
+            location: "Siliguri Park Street, Dabgram, Siliguri, West Bengal, 734004.",
+            url: "https://polytechnic.wbtetsd.gov.in/siligurigovpoly",
+            type: "Government",
+            course: "General",
+            ranking: "",
+            tuition: "₹895",
+            acceptance: "depend seat",
+            size: "7 acres",
+            rating: 5.0,
+            reviews: 121,
+            features: ["Labs and Workshops", "Affordability", "Placement cell"],
+            reviewText: "Many students praise the low tuition fees, which makes higher education accessible to all.",
+            emoji: "🔬"
+        }, {
+            name: "Malda College",
+            location: " Malda, West Bengal 732101",
+            url: "http://maldacollege.ac.in/",
+            type: "Government",
+            course: "General",
+            ranking: "",
+            tuition: "₹1,600",
+            acceptance: "depend setat",
+            size: "17 acres",
+            rating: 4.1,
+            reviews: 212,
+            features: ["Infrastructure & Facilities", "Diverse Programs", "Events"],
+            reviewText: "the experienced and knowledgeable faculty, stating that teachers are highly supportive and committed to helping students. The academic environment is described as serious, with a focus on quality education.",
+            emoji: "🔬"
+        }, {
+            name: " English Bazar College ",
+            location: "Rathbari, Malda, West Bengal 732101",
+            url: " https://www.maldacollege.ac.in/",
+            type: "Government",
+            course: "General",
+            ranking: "",
+            tuition: "₹3,390",
+            acceptance: "60%",
+            size: "17 acres",
+            rating: 4.0,
+            reviews: 121,
+            features: ["Infrastructure & Facilities", "Affordable Fees", "Academics and Student Life"],
+            reviewText: " the college has a large and clean campus with a huge playground that students enjoy.",
+            emoji: "🔬"
+        }, {
+            name: "Behal College",
+            location: " Behala, Kolkata, West Bengal 700060",
+            url: " https://www.behalacollege.in/",
+            type: "Government",
+            course: "General",
+            ranking: "",
+            tuition: "₹2,100",
+            acceptance: "45%",
+            size: "2.06 acres",
+            rating: 4.0,
+            reviews: 121,
+            features: ["Campus and Facilities", "Academics and Student Life"],
+            reviewText: " A recurring theme is the very low fee structure, which makes the college a great choice for students seeking a quality education without a high financial burden.",
+            emoji: "🔬"
+        }, {
+            name: "Asansol Girl's College",
+            location: "Asansol Court Area, Asansol, West Bengal 713304",
+            url: "https://asansolgirlscollege.ac.in/",
+            type: "Government",
+            course: "General",
+            ranking: "",
+            tuition: "₹3,385",
+            acceptance: "",
+            size: "5 acres",
+            rating: 4.0,
+            reviews: 380,
+            features: ["Facilities", "Academic Features", "Holistic Education"],
+            reviewText: " Students highly praise the faculty, describing them as experienced, helpful, and highly qualified.",
+            emoji: "🔬"
+        }, {
+            name: "Chinsurah Government College",
+            location: "Chinsurah, West Bengal 712101",
+            url: "https://hooghlymohsincollege.ac.in/",
+            type: "Government",
+            course: "General",
+            ranking: "",
+            tuition: "₹1,051",
+            acceptance: "",
+            size: "4 acres",
+            rating: 4.2,
+            reviews: 1112,
+            features: ["Long-Standing Reputation", "Diverse Programs", "Campus and Infrastructure"],
+            reviewText: " The college's spacious campus and green environment are also frequently highlighted. The library is consistently reviewed positively for being well-stocked with a wide range of books and offering a quiet.",
+            emoji: "🔬"
+        }, ];
+
+        let currentColleges = [];
+        let displayedCount = 0;
+        const itemsPerLoad = 6;
+
+        function initializePage() {
+            currentColleges = [...collegesData];
+            displayedCount = 0;
+            d
+            renderColleges();
+        }
+
+        function renderColleges() {
+            const grid = document.getElementById('collegesGrid');
+            const endIndex = Math.min(displayedCount + itemsPerLoad, currentColleges.length);
+
+            for (let i = displayedCount; i < endIndex; i++) {
+                const college = currentColleges[i];
+                const collegeCard = createCollegeCard(college);
+                grid.appendChild(collegeCard);
+            }
+
+            displayedCount = endIndex;
+            updateResultsCount();
+            updateLoadMoreButton();
+        }
+
+        function createCollegeCard(college) {
+            const card = document.createElement('div');
+            card.className = 'college-card';
+
+            const stars = '★'.repeat(Math.floor(college.rating)) + '☆'.repeat(5 - Math.floor(college.rating));
+
+            card.innerHTML = `
+                <div class="college-image">
+                    <span>${college.emoji}</span>
+                    <div class="verification-status">Verified</div>
+                </div>
+                <div class="college-content">
+                    <div class="college-header">
+                        <div>
+                            <div class="college-name">${college.name}</div>
+                            <div class="college-location">${college.location}</div>
+                        </div>
+                        <div class="ranking-badge">${college.ranking}</div>
+                    </div>
+                    
+                    <div class="college-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">${college.tuition}</span>
+                            <span class="stat-label">Annual Tuition</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">${college.acceptance}</span>
+                            <span class="stat-label">Accept Rate</span>
+                        </div>
+                    </div>
+                    
+                    <div class="college-features">
+                        ${college.features.map(feature => `<span class="feature-tag">${feature}</span>`).join('')}
+                    </div>
+                    
+                    <div class="reviews-preview">
+                        <div class="review-stars">
+                            <span class="stars">${stars}</span>
+                            <span class="review-count">${college.rating} (${college.reviews} reviews)</span>
+                        </div>
+                        <div class="review-text">"${college.reviewText}"</div>
+                    </div>
+                    
+                    <div class="college-actions">
+                        <a href="${college.url}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Details</a>
+                        <a href="#" class="btn btn-secondary">Compare</a>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        function updateResultsCount() {
+            const count = document.getElementById('resultsCount');
+            count.textContent = `Showing ${displayedCount} of ${currentColleges.length} verified colleges`;
+        }
+
+        function updateLoadMoreButton() {
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            if (displayedCount >= currentColleges.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'block';
+            }
+        }
+
+        function filterColleges() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const locationFilter = document.getElementById('locationFilter').value;
+            const typeFilter = document.getElementById('typeFilter').value;
+            const courseFilter = document.getElementById('courseFilter').value; 
+
+            currentColleges = collegesData.filter(college => {
+                const matchesSearch = college.name.toLowerCase().includes(searchTerm) || 
+                                    college.location.toLowerCase().includes(searchTerm);
+                
+                const matchesLocation = !locationFilter || college.location.includes(locationFilter);
+                const matchesType = !typeFilter || college.type.toLowerCase() === typeFilter;
+                const matchesCourse = !courseFilter || college.course.toLowerCase() === courseFilter;
+
+                return matchesSearch && matchesLocation && matchesType && matchesCourse;
+            });
+
+            // Clear current display and reset
+            document.getElementById('collegesGrid').innerHTML = '';
+            displayedCount = 0;
+            renderColleges();
+        }
+
+        // Event listeners
+        document.getElementById('searchBtn').addEventListener('click', filterColleges);
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                filterColleges();
+            }
+        });
+
+        document.getElementById('locationFilter').addEventListener('change', filterColleges);
+        document.getElementById('typeFilter').addEventListener('change', filterColleges);
+        document.getElementById('courseFilter').addEventListener('change', filterColleges); 
+
+        document.getElementById('loadMoreBtn').addEventListener('click', function() {
+            const btn = this;
+            const originalText = btn.textContent;
+            btn.innerHTML = '<div class="spinner"></div>Loading...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                renderColleges();
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }, 800);
+        });
+
+        document.getElementById('sortSelect').addEventListener('change', function() {
+            const sortBy = this.value;
+            
+            currentColleges.sort((a, b) => {
+                switch(sortBy) {
+                    case 'ranking':
+                        return parseInt(a.ranking.match(/\d+/)[0]) - parseInt(b.ranking.match(/\d+/)[0]);
+                    case 'tuition-low':
+                        return parseInt(a.tuition.replace(/[₹,]/g, '')) - parseInt(b.tuition.replace(/[₹,]/g, ''));
+                    case 'tuition-high':
+                        return parseInt(b.tuition.replace(/[₹,]/g, '')) - parseInt(a.tuition.replace(/[₹,]/g, ''));
+                    case 'acceptance':
+                        return parseFloat(a.acceptance) - parseFloat(b.acceptance);
+                    default: // relevance
+                        return b.rating - a.rating; 
+                }
+            });
+
+            document.getElementById('collegesGrid').innerHTML = '';
+            displayedCount = 0;
+            renderColleges();
+        });
+
+        // Initialize page
+        initializePage();
+    </script>
+</body>
+
+</html>
