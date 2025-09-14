@@ -1,4 +1,4 @@
-Career_Awareness = {
+creative = {
     'graphic_designer': { 
         "heading": "Graphic Designer",
         "description": "Create visual content for print and digital media, including logos, brochures, and websites.",

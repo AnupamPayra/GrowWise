@@ -1,4 +1,4 @@
-Career_Awareness = {
+education = {
     'school_teacher': { 
         "heading": "School Teacher",
         "description": "Educate students in primary or secondary schools, developing knowledge, skills, and values.",

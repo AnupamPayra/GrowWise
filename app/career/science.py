@@ -1,4 +1,4 @@
-Career_Awareness = {
+science = {
     'research_scientist': { 
         "heading": "Research Scientist",
         "description": "Conduct experiments and investigations to advance knowledge in specific scientific fields.",

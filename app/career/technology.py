@@ -1,4 +1,4 @@
-Career_Awareness = {
+technology = {
     'software_developer': { 
         "heading": "Software Developer",
         "description": "Design, build, and maintain software applications, websites, and systems to solve real-world problems.",

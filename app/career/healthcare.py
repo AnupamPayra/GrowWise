@@ -1,4 +1,4 @@
-Career_Awareness = {
+healthcare = {
     'doctor': { 
         "heading": "Doctor",
         "description": "Diagnose and treat illnesses, provide preventive care, and guide patients to maintain good health.",

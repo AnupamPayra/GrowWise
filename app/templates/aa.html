@@ -1,0 +1,56 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Quiz</title>
+  <link rel="stylesheet" href="aa.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h2><span class="highlight">Career</span> Quiz</h2>
+    <div id="quiz-box"></div>
+
+    <div class="buttons">
+      <button id="prevBtn" onclick="prevQuestion()">Previous</button>
+      <button id="nextBtn" onclick="nextQuestion()">Next</button>
+      <button id="submitBtn" onclick="submitQuiz()">Submit</button>
+    </div>
+  </div>
+
+  <script src="aa.js"></script>
+</body>
+</html> -->
+
+
+{% extends 'base.html' %}
+{% block extra_css %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/aa.css') }}">
+{% endblock %}
+{% block content %}
+<div class="new">
+<div class="quiz-container">
+    <h2><span class="highlight">Career</span> Quiz</h2>
+    <div id="quiz-box"></div>
+
+    <div class="buttons">
+      <button id="prevBtn" onclick="prevQuestion()">Previous</button>
+      <button id="nextBtn" onclick="nextQuestion()">Next</button>
+      <button id="submitBtn" onclick="submitQuiz()">Submit</button>
+    </div>
+  </div>
+  </div>
+
+</body>
+{% endblock %}
+<script src="{{ url_for('static', filename='JavaScript/aa.js') }}"></script>
+</body>
+
+</html>
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JavaScript/aa.js') }}"></script>
+{% endblock %}
+
+

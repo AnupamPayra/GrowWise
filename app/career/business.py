@@ -1,4 +1,4 @@
-Career_Awareness = {
+bussiness = {
     'financial_analyst': { 
         "heading": "Financial Analyst",
         "description": "Analyze financial data, trends, and forecasts to help businesses make informed investment decisions.",
