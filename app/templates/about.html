@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block extra_css %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/about.css') }}">
+{% endblock %}
+{% block content %}
+
+<body>
+
+  <section class="about-page">
+    <h2 class="title">ABOUT US</h2>
+    <p class="subtitle">Our project is focused on guiding students in their educational journey by providing career
+      awareness, stream selection support, and degree valuation, so that after Class 10th and 12th they can make
+      informed choices and build a strong foundation for their future. We aim to bridge the gap between education and
+      career planning by offering personalized recommendations, insights into different streams, and clarity on the
+      value of various degrees. By combining technology with mentorship, our platform empowers students and parents to
+      explore opportunities, discover their strengths, and confidently choose the right path toward success.</p>
+
+    <!-- Student 1 -->
+    <div class="person">
+      <img src="{{ url_for('static', filename='images/sujoy.jpg') }}" alt="Asha Verma">
+      <div class="info">
+        <h3>Sujoy Patra</h3>
+        <p class="role">Team Lead</p>
+        <p>Sujoy leads the team with responsibility for project planning, task coordination, and smooth execution. He
+          specializes in project management, stakeholder communication, and system design. His leadership ensures that
+          the team stays aligned and productive.</p>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Student 2 -->
+    <div class="person">
+      <img src="{{ url_for('static', filename='images/bhaskar.jpg') }}" alt="Rohit Singh">
+      <div class="info">
+        <h3>Subhajit Bhaskar</h3>
+        <p class="role">Frontend Developer</p>
+        <p>Subhajit develops user-friendly and responsive web interfaces with a focus on modern design. He works with
+          HTML, CSS, and JavaScript to build clean, accessible layouts. His skills ensure the project delivers a
+          polished and engaging user experience.</p>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Student 3 -->
+    <div class="person">
+      <img src="{{ url_for('static', filename='images/anupam.jpg') }}" alt="Priya Nair">
+      <div class="info">
+        <h3>Anupam Payra</h3>
+        <p class="role">Backend Developer</p>
+        <p>Anupam designs and manages the server-side logic of the project. She is skilled in APIs, database design, and
+          performance optimization. Her work ensures the platform remains reliable, secure, and scalable.</p>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Student 4 -->
+    <div class="person">
+      <img src="{{ url_for('static', filename='images/suman.jpg') }}" alt="Vikram Patel">
+      <div class="info">
+        <h3>Suman Mondal</h3>
+        <p class="role">Machine Learning Engineer</p>
+        <p>Suman focuses on building intelligent features powered by data. He designs and trains machine learning
+          models, works on data cleaning, and evaluates performance metrics. His expertise brings personalized
+          recommendations and smart solutions to the project.</p>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Student 5 -->
+    <div class="person">
+      <img src="{{ url_for('static', filename='images/arzina.jpg') }}" alt="Neha Gupta">
+      <div class="info">
+        <h3>Arjina Khatun</h3>
+        <p class="role">UI/UX Designer</p>
+        <p>Arjina creates intuitive user journeys and modern visual designs. She works on wireframes, prototypes, and
+          usability testing. Her creativity ensures the platform is both attractive and easy to navigate.</p>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Student 6 -->
+    <div class="person">
+      <img src="{{ url_for('static', filename='images/krisna.jpg') }}" alt="Sahil Sharma">
+      <div class="info">
+        <h3>Krisna Chandra</h3>
+        <p class="role">QA & DevOps</p>
+        <p>Krisna ensures quality and smooth deployment of the project. He handles automated testing, CI/CD pipelines,
+          and server monitoring. His efforts guarantee stability, security, and efficiency in the system</p>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+{% endblock %}
+<script src="{{ url_for('static', filename='JavaScript/about.js') }}"></script>
+</body>
+
+</html>

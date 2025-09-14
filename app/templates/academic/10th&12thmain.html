@@ -1,0 +1,83 @@
+
+
+{% extends 'base.html' %}
+{% block title %}Career{% endblock %}
+{% block extra_css %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/academic/10th&12thmain.css') }}">
+{% endblock %}
+
+
+
+
+{% block content %} 
+<!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Academic Planning</h1>
+            <p>Your comprehensive study companion for 10th and 12th grade success</p>
+            
+            <div class="grade-selector">
+                <form action="/10th" method="post">
+                <button class="grade-btn active" data-grade="10">Class 10th</button>
+            </form>
+            <form action="/12th" method="post">
+                <button class="grade-btn" data-grade="12">Class 12th</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section id="subjects" class="subjects-section">
+                <h2 style="text-align: center; margin-bottom: 2rem; color: #333; font-size: 2.5rem;">Core Subjects</h2>
+                
+                <div class="subjects-grid" id="subjectsGrid">
+                    <!-- Grade 10 subjects -->
+                    <div class="subject-card grade-10">
+                        <h3>Mathematics</h3>
+                        <p>Algebra, Geometry, Trigonometry, Statistics and problem-solving techniques</p>
+                    </div>
+                    <div class="subject-card grade-10">
+                        <h3>Science</h3>
+                        <p>Physics, Chemistry, Biology with practical applications and experiments</p>
+                    </div>
+                    <div class="subject-card grade-10">
+                        <h3>English</h3>
+                        <p>Literature, Grammar, Writing skills and communication enhancement</p>
+                    </div>
+                    <div class="subject-card grade-10">
+                        <h3>Social Science</h3>
+                        <p>History, Geography, Political Science and Economics fundamentals</p>
+                    </div>
+                    <div class="subject-card grade-10">
+                        <h3>Computer Science</h3>
+                        <p>Programming basics, Data structures and digital literacy</p>
+                    </div>
+                    <div class="subject-card grade-10">
+                        <h3>Additional Subjects</h3>
+                        <p>Art, Music, Physical Education and skill development</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+{% endblock %}
+
+
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JavaScript/academic/10th&12thmain.js') }}"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+

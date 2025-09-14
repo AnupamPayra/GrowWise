@@ -1,0 +1,69 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+  margin: 0;
+  padding: 0;
+  color: #1e293b;
+}
+
+header {
+  background: #1e3a8a;
+  color: #fff;
+  padding: 25px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+section {
+  max-width: 900px;
+  margin: 25px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #1e40af;
+}
+
+section p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+.highlight {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.btn-group {
+  margin-top: 12px;
+}
+
+.explore-btn {
+  display: inline-block;
+  margin-right: 8px;
+  margin-top: 6px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.explore-btn:hover {
+  background: linear-gradient(90deg, #1e3a8a, #2563eb);
+  transform: scale(1.05);
+}

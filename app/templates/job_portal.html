@@ -1,0 +1,147 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Find</title>
+<link rel="stylesheet" href="../CSS/job_portal.css">
+
+   
+</head>
+<body>
+
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="technology">
+                    <div class="category-name">Technology</div>
+                    <div class="category-count">5,234 jobs</div>
+                    <a href="https://www.awwwards.com/websites/technology/#google_vignette" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="marketing">
+                    <div class="category-name">Marketing</div>
+                    <div class="category-count">2,156 jobs</div>
+                    <a href="https://www.escadrille.org/en/digital-marketing-the-keys-to-boosting-your-online-visibility/?utm_term=content%20marketing&utm_campaign=News+-+Digital+Marketing&utm_source=adwords&utm_medium=ppc&hsa_acc=1976325542&hsa_cam=22365629988&hsa_grp=176325964705&hsa_ad=741355672929&hsa_src=g&hsa_tgt=kwd-71227201&hsa_kw=content%20marketing&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=22365629988&gbraid=0AAAAADRxNeMc_ZWPGf-93rNlzFFpZE07G&gclid=Cj0KCQjww4TGBhCKARIsAFLXndQVE0nGAcXkZQS6L7MFdN9_QD6Je4CAm7q2I_iPoeGxG89GaqXtrC0aAjgnEALw_wcB" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="finance">
+                    <div class="category-name">Finance</div>
+                    <div class="category-count">1,890 jobs</div>                    
+                    <a href="https://www.moneycontrol.com/promo/mc_interstitial_dfp.php?size=1280x540" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="healthcare">
+                    <div class="category-name">Healthcare</div>
+                    <div class="category-count">3,421 jobs</div>
+                    <a href="https://www.healthassure.in/" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="education">
+                    <div class="category-name">Education</div>
+                    <div class="category-count">1,567 jobs</div>
+                               <a href="https://www.jobsineducation.net/" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="design">
+                    <div class="category-name">Design</div>
+                    <div class="category-count">987 jobs</div>
+                    <a href="https://www.youngdesignersindia.com/Jobs" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="engineering">
+                    <div class="category-name">Engineering</div>
+                    <div class="category-count">2,543 jobs</div>
+                        <a href="https://www.linkedin.com/home/?originalSubdomain=in" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="sales">
+                    <div class="category-name">Sales</div>
+                    <div class="category-count">1,876 jobs</div>
+                    <a href="https://www.naukri.com/mnjuser/homepage" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="hr">
+                    <div class="category-name">Research</div>
+                    <div class="category-count">734 jobs</div>
+                    <a href="https://researchersjob.com/category/job/" target="_blank" class="go-now-btn">Go Now</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <script>"../JS/main_page_job.js"</script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+{% extends 'base.html' %}
+{% block title %}Job-Portal{% endblock %}
+{% block extra_css %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/job_portal.css') }}">
+{% endblock %}
+
+
+
+
+{% block content %} 
+<section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="technology">
+                    <div class="category-name">Technology</div>
+                    <div class="category-count">5,234 jobs</div>
+                    <a href="https://www.awwwards.com/websites/technology/#google_vignette" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="marketing">
+                    <div class="category-name">Marketing</div>
+                    <div class="category-count">2,156 jobs</div>
+                    <a href="https://www.escadrille.org/en/digital-marketing-the-keys-to-boosting-your-online-visibility/?utm_term=content%20marketing&utm_campaign=News+-+Digital+Marketing&utm_source=adwords&utm_medium=ppc&hsa_acc=1976325542&hsa_cam=22365629988&hsa_grp=176325964705&hsa_ad=741355672929&hsa_src=g&hsa_tgt=kwd-71227201&hsa_kw=content%20marketing&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=22365629988&gbraid=0AAAAADRxNeMc_ZWPGf-93rNlzFFpZE07G&gclid=Cj0KCQjww4TGBhCKARIsAFLXndQVE0nGAcXkZQS6L7MFdN9_QD6Je4CAm7q2I_iPoeGxG89GaqXtrC0aAjgnEALw_wcB" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="finance">
+                    <div class="category-name">Finance</div>
+                    <div class="category-count">1,890 jobs</div>                    
+                    <a href="https://www.moneycontrol.com/promo/mc_interstitial_dfp.php?size=1280x540" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="healthcare">
+                    <div class="category-name">Healthcare</div>
+                    <div class="category-count">3,421 jobs</div>
+                    <a href="https://www.healthassure.in/" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="education">
+                    <div class="category-name">Education</div>
+                    <div class="category-count">1,567 jobs</div>
+                               <a href="https://www.jobsineducation.net/" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="design">
+                    <div class="category-name">Design</div>
+                    <div class="category-count">987 jobs</div>
+                    <a href="https://www.youngdesignersindia.com/Jobs" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="engineering">
+                    <div class="category-name">Engineering</div>
+                    <div class="category-count">2,543 jobs</div>
+                        <a href="https://www.linkedin.com/home/?originalSubdomain=in" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="sales">
+                    <div class="category-name">Sales</div>
+                    <div class="category-count">1,876 jobs</div>
+                    <a href="https://www.naukri.com/mnjuser/homepage" target="_blank" class="go-now-btn">Go Now</a>
+                </div>
+                <div class="category-card" data-category="hr">
+                    <div class="category-name">Research</div>
+                    <div class="category-count">734 jobs</div>
+                    <a href="https://researchersjob.com/category/job/" target="_blank" class="go-now-btn">Go Now</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JavaScript/job_portal.js') }}"></script>
+{% endblock %}

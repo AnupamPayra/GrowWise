@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+    <title>{% block title %}Academic Plain - 10th & 12th Grade Study Portal{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/class12.css' ) }}">
+</head>
+    {% block content %}
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Academic Plain</h1>
+            <p>Your comprehensive study companion for  12th grade success</p>
+            
+            <div class="grade-selector">
+                <button class="grade-btn active" data-grade="10">Back</button>
+                <button class="grade-btn" data-grade="12">Class 12th</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <section id="subjects" class="subjects-section">
+                <h2 style="text-align: center; margin-bottom: 2rem; color: #333; font-size: 2.5rem;">Core Subjects</h2>
+                
+                <div class="subjects-grid" id="subjectsGrid">
+                    <!-- Grade 10 subjects -->
+                    <div class="subject-card grade-10">
+                        <h3>📐 Engineer</h3>
+                        <p>Mechanical, Electrical, Civil, Computer Science, and practical problem-solving techniques</p>
+                    </div>
+                    <div class="subject-card grade-10">
+                        <h3>🧬 Medical</h3>
+                        <p>Biology, Anatomy, Physiology, Chemistry, and clinical reasoning skills</p>
+                    </div>
+                    <div class="subject-card grade-10">
+                        <h3>📖 Pharmacy</h3>
+                        <p>Pharmacology, Medicinal Chemistry, Pharmaceutics, Clinical Practice, and drug research techniques</p>
+                    </div>
+                    <div class="subject-card grade-10">
+                        <h3>🏛 Graphic Design</h3>
+                        <p>Visual Communication, Typography, Illustration, UI/UX, and creative design methods</p>
+                    </div>
+                    <div class="subject-card grade-10">
+                        <h3>🖥 Govt job</h3>
+                        <p>General Knowledge, Reasoning, Quantitative Aptitude, Current Affairs, and exam strategies</p>
+                    </div>
+                    <div class="subject-card grade-10">
+                        <h3>🎨 Higher Study</h3>
+                        <p>Advanced Research, Academic Writing, Critical Thinking, Specialized Courses, and study techniques</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Study Notes</h3>
+                    <p>Comprehensive chapter-wise notes with key concepts and formulas</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Practice Tests</h3>
+                    <p>Mock tests and previous year papers with detailed solutions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Exam Prep</h3>
+                    <p>Strategic preparation plans for CBSE, ICSE, and State boards</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Quick Tips</h3>
+                    <p>Smart study techniques and memory enhancement methods</p>
+                </div>
+            </section>
+
+            <section class="study-materials">
+                <h2 style="text-align: center; margin-bottom: 2rem; color: #333;">Study Resources</h2>
+                
+                <div class="material-tabs">
+                    <button class="tab-btn active" data-tab="notes">Study Notes</button>
+                    <button class="tab-btn" data-tab="papers">Question Papers</button>
+                    <button class="tab-btn" data-tab="solutions">Solutions</button>
+                    <button class="tab-btn" data-tab="tips">Study Tips</button>
+                </div>
+
+                <div class="material-content active" id="notes">
+                    <div class="material-list">
+                        <div class="material-item">
+                            <h4>📊 Mathematics Notes</h4>
+                            <p>Complete chapter summaries with formulas</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>⚗ Chemistry Notes</h4>
+                            <p>Reaction mechanisms and periodic trends</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>⚡ Physics Notes</h4>
+                            <p>Concepts with real-world applications</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>🌱 Biology Notes</h4>
+                            <p>Detailed diagrams and processes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="material-content" id="papers">
+                    <div class="material-list">
+                        <div class="material-item">
+                            <h4>📋 CBSE Papers 2023</h4>
+                            <p>Latest question papers with marking scheme</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>📋 Sample Papers</h4>
+                            <p>Board-pattern practice papers</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>📋 Mock Tests</h4>
+                            <p>Timed tests for exam simulation</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>📋 Previous Years</h4>
+                            <p>5 years question bank</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="material-content" id="solutions">
+                    <div class="material-list">
+                        <div class="material-item">
+                            <h4>✅ Step-by-step Solutions</h4>
+                            <p>Detailed working for all problems</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>✅ Video Explanations</h4>
+                            <p>Visual learning with animations</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>✅ Quick Reference</h4>
+                            <p>Formula sheets and shortcuts</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>✅ Error Analysis</h4>
+                            <p>Common mistakes and corrections</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="material-content" id="tips">
+                    <div class="material-list">
+                        <div class="material-item">
+                            <h4>🧠 Memory Techniques</h4>
+                            <p>Mnemonics and visualization methods</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>⏰ Time Management</h4>
+                            <p>Effective study schedules and planning</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>📖 Reading Strategies</h4>
+                            <p>Speed reading and comprehension</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>💪 Exam Confidence</h4>
+                            <p>Stress management and preparation</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    {% endblock %}
+    <script src="{{ url_for('static', filename='JavaScript/class12.js') }}"></script>
+</body>
+</html>
