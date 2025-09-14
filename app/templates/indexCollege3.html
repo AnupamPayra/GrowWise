@@ -1,31 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scholarship Finder | Your Gateway to Education</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+{% extends 'base.html' %}
+
+{% block title %}Medical Field{% endblock %}
+
+{% block extra_css %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style1.css">
-</head>
-<body class="bg-gray-50 text-gray-800">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/indexCollege3.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Header -->
+  <body class="bg-gray-50 text-gray-800">
 
   <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-50">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold text-blue-600">
-        <i class="fas fa-graduation-cap mr-2"></i>Scholarship Finder
-      </a>
-      <div class="hidden md:flex space-x-6">
-        <a href="#state" class="text-gray-600 hover:text-blue-600 transition">State Level</a>
-        <a href="#national" class="text-gray-600 hover:text-blue-600 transition">National Level</a>
-        <a href="#international" class="text-gray-600 hover:text-blue-600 transition">International</a>
-      </div>
-      <button id="mobile-menu-button" class="md:hidden focus:outline-none">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
-    </nav>
     <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
       <a href="#state" class="block py-2 text-gray-600 hover:text-blue-600">State Level</a>
       <a href="#national" class="block py-2 text-gray-600 hover:text-blue-600">National Level</a>
@@ -89,6 +79,11 @@
     </div>
   </footer>
 
-  <script src="script1.js"></script>
 </body>
-</html>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='JavaScript/scriptCollege3.js') }}"></script>
+{% endblock %}
+
+

@@ -9,10 +9,6 @@ const scholarships = [
   { name: "Chevening Scholarships", level: "International", eligibility: "Graduates with 2+ yrs work experience, study in UK", award: "Full tuition, stipend, travel", deadline: "Nov", link: "https://www.chevening.org/" },
   { name: "DAAD Scholarships", level: "International", eligibility: "Master's/PhD in Germany", award: "Full tuition + stipend", deadline: "Varies", link: "https://www.daad.de/" },
   { name: "Australia Awards Scholarship", level: "International", eligibility: "Indian students applying to Australia", award: "Full tuition + stipend", deadline: "May", link: "https://www.dfat.gov.au/people-to-people/australia-awards" },
-  { name: "National Fellowship and Scholarship for Higher Education of ST Students", level: "National", eligibility: "ST students, pursuing postgraduate / higher education (M.Phil / PhD)", award: "Fellowship / scholarship for higher studies", deadline: "Dec", link: "https://scholarships.gov.in" },
-  { name: "Pre-Matric Scholarship Scheme for Minorities (India)", level: "National", eligibility: "Students from minority communities, classes 1-10, family income below threshold, passed previous exam", award: "Monthly stipend / maintenance + maybe tuition", deadline: "Yearly, check central scheme notification", link: "https://scholarships.gov.in" },
-  { name: "National Means-cum-Merit Scholarship (NMMS)", level: "National", eligibility: "Students of Class 9, merit + income criteria, studying in Govt / aided schools", award: "₹ 12,000/year", deadline: "Annual notification via education department / NSP", link: "https://scholarships.gov.in" },
-  { name: "Talent Support Stipend Programme, West Bengal", level: "State (West Bengal)", eligibility: "Minority community students, WB resident, from Class 11 → PhD, meritorious + financial need", award: "Stipend (varies depending on level)", deadline: "Annual WB Minority Dev. notifications", link: "https://wbmdfc.org" },
 ];
 
 const grid = document.getElementById('scholarship-grid');
@@ -28,7 +24,7 @@ let visibleCount = 6;
 
 const highlightText = (text, term) => {
   if (!term) return text;
-  const regex = new RegExp(`(${term})`, 'gi');
+  const regex = new RegExp((${term}), 'gi');
   return text.replace(regex, '<span class="highlight">$1</span>');
 };
 
@@ -42,7 +38,7 @@ const renderScholarships = (list, searchTerm = '') => {
     noResultsDiv.classList.add('hidden');
     visibleItems.forEach(s => {
       const card = document.createElement('div');
-      card.className = `bg-white rounded-lg shadow-md p-6 card-hover-effect border-t-4 ${s.level === 'State' ? 'border-green-500' : s.level === 'National' ? 'border-blue-500' : 'border-purple-500'}`;
+      card.className = bg-white rounded-lg shadow-md p-6 card-hover-effect border-t-4 ${s.level === 'State' ? 'border-green-500' : s.level === 'National' ? 'border-blue-500' : 'border-purple-500'};
       card.innerHTML = `
         <span class="text-sm font-semibold ${s.level === 'State' ? 'text-green-600' : s.level === 'National' ? 'text-blue-600' : 'text-purple-600'} bg-gray-100 px-2 py-1 rounded-full">${s.level}</span>
         <h3 class="text-xl font-bold mt-4 mb-2 text-gray-900">${highlightText(s.name, searchTerm)}</h3>
@@ -53,7 +49,6 @@ const renderScholarships = (list, searchTerm = '') => {
       `;
       grid.appendChild(card);
     });
-
     loadMoreBtn.classList.toggle('hidden', visibleCount >= list.length);
   }
 };

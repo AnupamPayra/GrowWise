@@ -49,12 +49,17 @@ def quize():
         return render_template("aa.html")
     return render_template("aa.html")
 
+# # college directory
+# @path_bp.route('/collage_directory', methods=["GET", "POST"])
+# def collage_directory():
+#     if request.method == "POST":
+#         return render_template("aa.html")
+#     return render_template("aa.html")
+
 # college directory
-@path_bp.route('/collage_directory', methods=["GET", "POST"])
-def collage_directory():
-    if request.method == "POST":
-        return render_template("aa.html")
-    return render_template("aa.html")
+@path_bp.route('/scolership')
+def scolership():
+    return render_template("indexCollege3.html")
 
 
 
