@@ -30,6 +30,9 @@
     transform-style: preserve-3d;
 }
 
+h2{
+    font-weight: bolder;
+}
 .card-modern:hover {
     transform: translateY(-12px) rotateX(5deg);
     box-shadow: 0 32px 64px rgba(0, 0, 0, 0.15);

@@ -11,7 +11,11 @@
 
 <body>
     <header class="navbar">
-    <div class="logo">EduLearn</div>
+    
+    <div class="logo">
+      EduLearn
+    </div>
+
 
 
     <div class="right-section">
@@ -19,7 +23,7 @@
         <a href="{{ url_for('path.scolership') }}">scolership</a>
       <a href="#">Home</a>
       <a href="{{ url_for('path.about') }}">About Us</a>
-      <a href="#">Contact Us</a>
+      <a href="#">Admission</a>
     </nav>
     <div class="buttons">
         <form action="/signup" method="post">
@@ -44,7 +48,7 @@
                             <span class="text-white font-black text-2xl">E</span>
                         </div>
                         <div>
-                            <h3 class="text-3xl font-black">EduLearn</h3>
+                           
                             <p class="text-gray-400 text-lg">Journey to Mastery</p>
                         </div>
                     </div>
@@ -54,13 +58,13 @@
                 </div>
                 
                 <div>
-                    <h4 class="font-black mb-6 text-xl">Course</h4>
+                    <h4 class="font-black mb-6 text-xl" id="sec">Section</h4>
                     <ul class="space-y-4 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Academic Planing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Academic Planning</a></li>
                         <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Career Awarenees</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Industry connection</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Collage Directory</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">AI DashBoard</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Job Portal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">College Directory</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Aplitude Quiz</a></li>
                     </ul>
                 </div>
                 
@@ -73,12 +77,6 @@
                         <li><a href="#" class="hover:text-white transition-colors duration-300 hover:translate-x-1 block">Contact</a></li>
                     </ul>
                 </div>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-12 text-center">
-                <p class="text-gray-400 text-lg">
-                    &copy; 2025 LearnMap. All rights reserved. Made with ❤ for learners worldwide.
-                </p>
             </div>
         </div>
     </footer>
