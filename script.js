@@ -1,0 +1,24 @@
+var tl=gsap.timeline();
+tl.to("#full",{
+    top:0,
+    right:100,
+    duration:0.2,
+})
+// tl.from("#full h4",{
+//     x:150,
+//     duration:0.3,
+//     // stagger:0.28,
+//     opacity:0,
+// })
+tl.from("#full i",{
+    opacity:0,
+})
+tl.pause();
+var menu=document.querySelector("#nav i");
+var cross=document.querySelector("#full i");
+menu.addEventListener("click",function(){
+    tl.play()
+})
+ cross.addEventListener("click",function(){
+    tl.reverse();
+ })
