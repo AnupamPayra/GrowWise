@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduBot - Chat Assistant</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="main">
+    <div id="center">
+      <!-- <i class="ri-menu-line"></i> -->
+       <i class="ri-chat-1-fill"></i>
+    </div>
+  </div>
+
+  <div id="full">
+    <div class="chat-container">
+      <div class="chat-header">🎓 EduBot - Your Study Helper</div>
+      <div class="chat-body" id="chatBody">
+        <div class="message bot-message">Hi! I’m EduBot. Ask me anything about your studies 📚</div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" id="userInput" placeholder="Type your question..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+    <i class="ri-close-line"></i>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
